@@ -9,7 +9,7 @@
         :root {
             --brass: #d4af37;
             --white: #ffffff;
-            --glass: rgba(0, 0, 0, 0.6); 
+            --deep-river: #050a0f;
         }
 
         body {
@@ -17,64 +17,63 @@
             padding: 0;
             font-family: 'Montserrat', sans-serif;
             color: var(--white);
-            /* THE RIVER: Using a brighter, vibrant river image */
-            background: url('https://images.unsplash.com/photo-1437482273821-839346d01242?q=80&w=2000&auto=format&fit=crop') no-repeat center center fixed;
+            /* THE FIX: Darkened overlay so the river looks deep and blue, not white/gray */
+            background: linear-gradient(rgba(5, 10, 15, 0.7), rgba(5, 10, 15, 0.7)), 
+                        url('https://images.unsplash.com/photo-1437482273821-839346d01242?q=80&w=2000&auto=format&fit=crop');
+            background-attachment: fixed;
             background-size: cover;
+            background-position: center;
             scroll-behavior: smooth;
         }
 
-        /* Navigation */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 8%; background: rgba(0, 0, 0, 0.85);
-            border-bottom: 3px solid var(--brass); position: sticky; top: 0; z-index: 1000;
+            padding: 1rem 8%; background: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid var(--brass); position: sticky; top: 0; z-index: 1000;
         }
 
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--brass); text-transform: uppercase; font-weight: 900; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--brass); text-transform: uppercase; font-weight: 900; letter-spacing: 3px; }
         .nav-links { display: flex; gap: 20px; list-style: none; margin: 0; }
-        .nav-links a { text-decoration: none; color: white; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Sections: Made transparent so the river shows through */
-        .section { padding: 100px 10%; background: transparent; }
-        
         .hero {
             height: 40vh; display: flex; flex-direction: column; justify-content: center;
             align-items: center; text-align: center;
         }
 
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--brass); margin: 0; text-shadow: 3px 3px 10px rgba(0,0,0,0.8); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--brass); margin: 0; text-shadow: 2px 2px 20px rgba(0,0,0,0.8); }
 
-        /* The "Floating" Glass Containers */
+        .section { padding: 60px 10%; }
+        .title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 40px; text-transform: uppercase; }
+
+        /* Modern Glass Box: Darker and cleaner */
         .glass-container {
-            background: var(--glass); padding: 50px; border-radius: 20px;
-            border: 2px solid var(--brass); max-width: 850px; margin: 0 auto;
-            backdrop-filter: blur(8px); /* This makes the river look "frosted" behind the box */
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.8); 
+            padding: 45px; border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.4); 
+            max-width: 800px; margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
         }
-
-        .title { font-family: 'Playfair Display', serif; text-align: center; font-size: 3rem; color: var(--brass); margin-bottom: 40px; text-transform: uppercase; text-shadow: 2px 2px 5px #000; }
 
         input, textarea, select {
             width: 100%; padding: 15px; margin: 10px 0 20px 0;
-            background: rgba(255, 255, 255, 0.2); border: 1px solid var(--white); color: white; border-radius: 8px; box-sizing: border-box; font-size: 1rem;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid #444; color: white; border-radius: 4px; box-sizing: border-box;
         }
 
         .btn {
-            background: var(--brass); color: #000; border: none; padding: 20px;
-            font-weight: 900; text-transform: uppercase; cursor: pointer; width: 100%; letter-spacing: 2px; border-radius: 8px; font-size: 1.1rem;
+            background: var(--brass); color: #000; border: none; padding: 18px;
+            font-weight: 900; text-transform: uppercase; cursor: pointer; width: 100%; letter-spacing: 2px;
         }
 
-        .review-card { background: rgba(0,0,0,0.7); padding: 30px; border-radius: 15px; border-left: 5px solid var(--brass); margin-bottom: 20px; }
+        .review-card { background: rgba(0,0,0,0.85); padding: 30px; border-radius: 8px; border: 1px solid #222; margin-bottom: 20px; }
 
         .dono-btn {
-            display: inline-block; margin: 10px; padding: 15px 40px;
-            background: var(--brass); color: #000; text-decoration: none;
-            font-weight: bold; border-radius: 8px; transition: 0.3s;
+            display: inline-block; margin: 10px; padding: 15px 35px;
+            background: var(--brass); color: black; text-decoration: none;
+            font-weight: bold; border-radius: 4px; transition: 0.3s;
         }
 
-        .dono-btn:hover { transform: scale(1.05); background: white; }
-
-        footer { padding: 40px; text-align: center; background: rgba(0,0,0,0.9); margin-top: 50px; border-top: 2px solid var(--brass); }
+        footer { padding: 40px; text-align: center; font-size: 0.7rem; background: rgba(0,0,0,0.95); margin-top: 50px; border-top: 1px solid var(--brass); color: #888; }
     </style>
 </head>
 <body>
@@ -82,7 +81,7 @@
     <nav>
         <div class="logo">Alex's Custom Gear</div>
         <ul class="nav-links">
-            <li><a href="#order">Custom Orders</a></li>
+            <li><a href="#order">Order Gear</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#support">Support Alex</a></li>
         </ul>
@@ -90,54 +89,29 @@
 
     <header class="hero">
         <h1>Legacy on the Line</h1>
-        <p style="font-size: 1.4rem; font-style: italic; background: rgba(0,0,0,0.4); padding: 5px 20px; border-radius: 50px;">Precision Crafted for the Life of a Fisherman</p>
+        <p style="font-size: 1.1rem; opacity: 0.8; letter-spacing: 1px;">Artisan Tackle for the Master Angler</p>
     </header>
 
     <section id="order" class="section">
         <h2 class="title">Custom Commissions</h2>
         <div class="glass-container">
             <form>
-                <label>Select Build Type</label>
+                <label>Inventory Choice</label>
                 <select>
                     <option>Custom Hand-Turned Rod</option>
                     <option>Bespoke Brass Reel</option>
                     <option>Premium Line & Inventory Set</option>
+                    <option>Full Expedition Pack</option>
                 </select>
-                <input type="text" placeholder="Your Full Name">
-                <textarea rows="5" placeholder="Build Details (Wood type, balance requirements, etc.)"></textarea>
-                <button type="submit" class="btn">Send Request to Alex</button>
+                <input type="text" placeholder="Your Name">
+                <textarea rows="4" placeholder="Specifics (Wood types, rod weight, intended species...)"></textarea>
+                <button type="submit" class="btn">Submit Design Request</button>
             </form>
         </div>
     </section>
 
     <section id="reviews" class="section">
         <h2 class="title">Angler Reports</h2>
-        <div style="max-width: 850px; margin: 0 auto;">
+        <div style="max-width: 800px; margin: 0 auto;">
             <div class="review-card">
-                <div style="color:var(--brass); font-size: 1.5rem; margin-bottom: 10px;">★★★★★</div>
-                <p>"The custom rod is a work of art. It handles better than any mass-produced gear I've ever touched."</p>
-                <small>— Mike R., Tournament Angler</small>
-            </div>
-            <div class="review-card">
-                <div style="color:var(--brass); font-size: 1.5rem; margin-bottom: 10px;">★★★★★</div>
-                <p>"Alex's reels are the gold standard. Smooth, durable, and looks amazing on the water."</p>
-                <small>— Sarah J.</small>
-            </div>
-        </div>
-    </section>
-
-    <section id="support" class="section" style="text-align: center;">
-        <h2 class="title">Support the Shop</h2>
-        <div class="glass-container">
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Contributions directly support the sourcing of premium oak, walnut, and precision brass components.</p>
-            <a href="https://paypal.me/yourusername" class="dono-btn" target="_blank">PayPal</a>
-            <a href="https://cash.app/$yourusername" class="dono-btn" target="_blank">CashApp</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | THE RIVER FLOWS ON</p>
-    </footer>
-
-</body>
-</html>
+                <div style="color:var(--brass); margin
