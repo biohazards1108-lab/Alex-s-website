@@ -22,12 +22,13 @@
             scroll-behavior: smooth;
         }
 
+        /* Fixed Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 8%;
-            background: rgba(26, 18, 11, 0.95);
+            background: rgba(26, 18, 11, 0.98);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--leather);
             position: sticky;
@@ -37,163 +38,11 @@
 
         .logo { font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; color: var(--brass); font-weight: 900; }
         .nav-links { display: flex; gap: 30px; list-style: none; margin: 0; }
-        .nav-links a { text-decoration: none; color: var(--parchment); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a { text-decoration: none; color: var(--parchment); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--brass); }
 
+        /* Hero Section */
         .hero {
-            height: 60vh;
+            height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1541742425281-c1d3bc8abc46?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .section { padding: 80px 10%; border-bottom: 1px solid var(--leather); }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: var(--brass); text-transform: uppercase; }
-
-        /* Order Form Styling */
-        .order-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #231a14;
-            padding: 40px;
-            border: 1px solid var(--leather);
-            border-top: 5px solid var(--brass);
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0 25px 0;
-            background: var(--dark-oak);
-            border: 1px solid var(--leather);
-            color: var(--parchment);
-            font-family: serif;
-            box-sizing: border-box;
-        }
-
-        .submit-btn {
-            background: var(--brass);
-            color: var(--dark-oak);
-            border: none;
-            padding: 15px 30px;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.3s;
-        }
-
-        .submit-btn:hover { background: var(--parchment); }
-
-        /* Review Section */
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .review-card { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 5px; font-style: italic; }
-        .stars { color: var(--brass); margin-bottom: 10px; }
-
-        /* Donation Section */
-        .donate-box {
-            text-align: center;
-            background: var(--forest);
-            padding: 40px;
-            border-radius: 10px;
-        }
-
-        .pay-links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 25px;
-            background: var(--brass);
-            color: var(--dark-oak);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        footer { padding: 40px; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
-
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <nav>
-        <div class="logo">Alex's Custom Gear</div>
-        <ul class="nav-links">
-            <li><a href="#gear">Gear</a></li>
-            <li><a href="#order">Place Order</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#support">Support</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <h1 style="color:var(--brass); font-size: 3rem;">Master the Water</h1>
-        <p>Hand-built rods & reels. Crafted one at a time.</p>
-    </header>
-
-    <section id="order" class="section">
-        <h2 class="section-title">Commission a Build</h2>
-        <div class="order-container">
-            <form action="#">
-                <label>What are we building?</label>
-                <select>
-                    <option>Custom Casting Reel</option>
-                    <option>Hand-Turned Oak Fishing Rod</option>
-                    <option>Full Expedition Set (Rod & Reel)</option>
-                    <option>Custom Lure Pack</option>
-                </select>
-
-                <label>Your Name</label>
-                <input type="text" placeholder="John Doe">
-
-                <label>Build Details & Specifics</label>
-                <textarea rows="5" placeholder="Tell Alex about the wood type, weight, or specific fish you are targeting..."></textarea>
-
-                <button type="submit" class="submit-btn">Send Request to Alex</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="reviews" class="section">
-        <h2 class="section-title">Angler Testimonials</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"The walnut grip on my custom rod is a work of art. You can feel every nibble on the line."</p>
-                <small>- Mike R.</small>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Best reel I've ever owned. Smooth as silk and looks incredible in the sunlight."</p>
-                <small>- Sarah L.</small>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Alex's attention to detail is unmatched. Worth every penny for a legacy piece."</p>
-                <small>- Captain Pete</small>
-            </div>
-        </div>
-    </section>
-
-    <section id="support" class="section">
-        <div class="donate-box">
-            <h2 style="margin-top:0;">Support the Craft</h2>
-            <p>If you love the work and want to help Alex keep the shop running, feel free to buy him a coffee or contribute to the shop's material fund.</p>
-            <div class="pay-links">
-                <a href="https://paypal.me/yourusername" target="_blank">PayPal</a>
-                <a href="https://cash.app/$yourusername" target="_blank">CashApp</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | EST. 2024</p>
-    </footer>
-
-</body>
-</html>
+                        url('
