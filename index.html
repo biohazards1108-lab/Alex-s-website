@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Custom Gear | Artisan Fishing Equipment</title>
+    <title>Alex's Custom Gear | Reels & Artisan Tackle</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --brass: #d4af37; --gold-glow: rgba(212, 175, 55, 0.3); --deep-river: #050a0f; }
@@ -11,7 +11,7 @@
         body {
             margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; color: #fff;
             background-color: var(--deep-river);
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), 
                               url('https://images.unsplash.com/photo-1516710104703-aa47b6275051?q=80&w=2000&auto=format&fit=crop');
             background-attachment: fixed; background-size: cover; background-position: center;
             scroll-behavior: smooth; overflow-x: hidden;
@@ -25,95 +25,104 @@
         .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; }
         .nav-links a { text-decoration: none; color: #bbb; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
         .nav-links a:hover { color: var(--brass); }
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6rem); color: var(--brass); margin: 0; text-transform: uppercase; font-style: italic; letter-spacing: -2px; }
-        .status-container { margin-top: 30px; text-align: center; }
-        .status-bar { width: 250px; height: 6px; background: rgba(255,255,255,0.1); margin: 10px auto; position: relative; border-radius: 10px; }
-        .status-fill { width: 40%; height: 100%; background: var(--brass); border-radius: 10px; box-shadow: 0 0 10px var(--brass); }
-        .section { padding: 120px 10%; }
-        .title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 60px; text-transform: uppercase; letter-spacing: 8px; }
-        .workshop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--brass); margin: 0; text-transform: uppercase; font-style: italic; letter-spacing: -1px; }
+        .section { padding: 100px 10%; }
+        .title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.2rem; color: var(--brass); margin-bottom: 60px; text-transform: uppercase; letter-spacing: 6px; }
+        .workshop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         .gear-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; transition: 0.5s; position: relative; }
         .gear-card:hover { border-color: var(--brass); transform: scale(1.02); }
-        .gear-card img { width: 100%; height: 400px; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .gear-card img { width: 100%; height: 450px; object-fit: cover; opacity: 0.8; transition: 0.5s; }
         .gear-card:hover img { opacity: 1; }
-        .artisan-card { background: rgba(5, 10, 15, 0.9); padding: 60px; border: 1px solid rgba(212, 175, 55, 0.2); max-width: 900px; margin: 0 auto; box-shadow: 0 40px 100px rgba(0,0,0,0.8); }
-        input, textarea, select { width: 100%; padding: 20px; margin-bottom: 30px; background: #000; border: 1px solid #222; color: white; border-radius: 0; box-sizing: border-box;}
+        .artisan-card { background: rgba(5, 10, 15, 0.9); padding: 50px; border: 1px solid rgba(212, 175, 55, 0.2); max-width: 800px; margin: 0 auto; }
+        input, textarea, select { width: 100%; padding: 18px; margin-bottom: 25px; background: #000; border: 1px solid #222; color: white; border-radius: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif;}
         .btn { background: var(--brass); color: #000; border: none; padding: 20px; font-weight: 900; text-transform: uppercase; width: 100%; letter-spacing: 4px; transition: 0.3s; }
         .btn:hover { background: #fff; }
-        .fab { position: fixed; bottom: 30px; right: 30px; background: var(--brass); color: black; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 100; font-size: 0.7rem; text-align: center; line-height: 1; }
-        footer { padding: 100px; text-align: center; font-size: 0.6rem; background: #000; letter-spacing: 4px; color: #444; border-top: 1px solid #111; }
+        footer { padding: 80px; text-align: center; font-size: 0.6rem; background: #000; letter-spacing: 4px; color: #444; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
     <div id="cursor"></div>
-    <a href="#order" class="fab">ORDER<br>NOW</a>
     <nav>
         <div class="logo">Alex's Custom Gear</div>
         <ul class="nav-links">
-            <li><a href="#workshop">The Workshop</a></li>
+            <li><a href="#workshop">The Collection</a></li>
             <li><a href="#order">Commissions</a></li>
-            <li><a href="#reviews">Testimonials</a></li>
         </ul>
     </nav>
+
     <header class="hero">
-        <h1 style="animation: slideIn 1.5s ease;">Legacy on the Line</h1>
-        <div class="status-container" style="animation: slideIn 2s ease;">
-            <div class="status-bar"><div class="status-fill"></div></div>
-            <p style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--brass);">2 Custom Build Slots Open for April</p>
-        </div>
+        <h1 style="animation: slideIn 1.5s ease;">Precision Reels & Tackle</h1>
+        <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.7rem; color: var(--brass); margin-top: 20px;">Forged for the Modern Angler</p>
     </header>
+
     <section id="workshop" class="section reveal">
-        <h2 class="title">The Workshop</h2>
+        <h2 class="title">The Collection</h2>
         <div class="workshop-grid">
             <div class="gear-card">
-                <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?auto=format&fit=crop&q=80&w=800">
-                <div style="padding: 20px;"><h3>Titan Series</h3><p style="font-size: 0.8rem; opacity: 0.6;">Precision brass internals met with reclaimed hardwood side-plates.</p></div>
+                <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?auto=format&fit=crop&q=80&w=1000">
+                <div style="padding: 25px;">
+                    <h3 style="color: var(--brass);">Custom Reels</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.6;">Precision brass internals paired with artisan hardwood side-plates. Built for heavy river duty and legacy performance.</p>
+                </div>
             </div>
             <div class="gear-card">
-                <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&q=80&w=800">
-                <div style="padding: 20px;"><h3>Artisan Lures</h3><p style="font-size: 0.8rem; opacity: 0.6;">Individually carved and hand-painted legacy patterns.</p></div>
-            </div>
-            <div class="gear-card">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=800">
-                <div style="padding: 20px;"><h3>The Rod Room</h3><p style="font-size: 0.8rem; opacity: 0.6;">Where native oak and walnut are turned for the perfect cast.</p></div>
+                <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&q=80&w=1000">
+                <div style="padding: 25px;">
+                    <h3 style="color: var(--brass);">Artisan Tackle</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.6;">Individually carved lures and custom-weighted terminal tackle designed to replicate native river prey.</p>
+                </div>
             </div>
         </div>
     </section>
+
     <section id="order" class="section reveal">
         <h2 class="title">Initiate Build</h2>
         <div class="artisan-card">
-            <form action="https://formspree.io/f/Biohazards1108@GMAIL.COM" method="POST">
-                <label style="display:block; margin-bottom:10px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--brass);">Gear Choice</label>
-                <select name="GearType">
-                    <option>Custom Hand-Turned Rod</option>
+            <form action="https://formspree.io/f/biohazards1108@GMAIL.COM" method="POST">
+                <input type="hidden" name="_next" value="https://biohazards1108-lab.github.io/Alex-s-website/">
+                
+                <label style="display:block; margin-bottom:10px; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--brass);">Select Category</label>
+                <select name="Category">
                     <option>Bespoke Brass Reel</option>
-                    <option>Full Expedition Pack</option>
+                    <option>Custom Hardwood Reel</option>
+                    <option>Artisan Lure Set</option>
+                    <option>Custom Terminal Tackle</option>
                 </select>
+                
                 <input type="text" name="Name" placeholder="Full Name" required>
-                <input type="email" name="Email" placeholder="Your Email" required>
-                <textarea name="Message" rows="4" placeholder="Detail your project..." required></textarea>
-                <button type="submit" class="btn">Start Commission</button>
+                <input type="email" name="Email" placeholder="Email Address" required>
+                <textarea name="Specs" rows="4" placeholder="Describe your custom specs (wood type, weight, patterns)..." required></textarea>
+                
+                <button type="submit" class="btn">Submit Request</button>
             </form>
         </div>
     </section>
-    <section id="reviews" class="section reveal">
-        <h2 class="title">Testimonials</h2>
-        <div style="text-align:center; max-width: 700px; margin: 0 auto; line-height: 1.8;">
-            <p>"The walnut rod is a masterpiece. Balanced, precise, and built for a lifetime."</p>
-            <p style="color: var(--brass); font-weight: 600;">— Michael R., Master Angler</p>
-        </div>
-    </section>
+
     <footer>
-        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | FORGED IN TRADITION</p>
+        <p>&copy; 2026 ALEX'S CUSTOM GEAR | REELS & TACKLE | HANDCRAFTED TRADITION</p>
     </footer>
+
     <script>
         const cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
         const links = document.querySelectorAll('a, button, select, input');
-        links.forEach(link => { link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(3)'); link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)'); });
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(3)');
+            link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+        });
     </script>
 </body>
 </html>
