@@ -3,46 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Custom Fishing Gear | Premium Outdoors</title>
+    <title>Alex's Custom Fishing Gear | Premium Handcrafted Tackle</title>
     <style>
         :root {
-            --oak-dark: #1a1410;       /* Deepest brown/black */
-            --oak-medium: #3d2b1f;     /* Rich walnut */
-            --forest-floor: #141a15;   /* Dark moss green */
-            --brass: #c5a059;          /* Lure/Hardware gold */
-            --parchment: #d7ccc8;      /* Soft tan text */
+            --dark-oak: #1a120b;
+            --leather: #3c2a21;
+            --brass: #d4a373;
+            --forest: #283618;
+            --parchment: #fefae0;
+            --text-muted: #a6a6a6;
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Playfair Display', serif;
             margin: 0;
-            background-color: var(--oak-dark); /* NO WHITE SPACE */
+            background-color: var(--dark-oak);
             color: var(--parchment);
-            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* Navigation */
+        /* Pro Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 10%;
-            background: #000000;
-            border-bottom: 2px solid var(--oak-medium);
+            padding: 1.5rem 8%;
+            background: rgba(26, 18, 11, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--leather);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo { font-size: 1.4rem; font-weight: bold; color: var(--brass); text-transform: uppercase; }
-        .nav-links { list-style: none; display: flex; gap: 2rem; padding: 0; }
-        .nav-links a { text-decoration: none; color: var(--parchment); }
+        .logo { 
+            font-size: 1.2rem; 
+            letter-spacing: 4px; 
+            text-transform: uppercase; 
+            color: var(--brass);
+            font-weight: 900;
+        }
 
-        /* Hero */
+        .nav-links { display: flex; gap: 30px; list-style: none; margin: 0; }
+        .nav-links a { text-decoration: none; color: var(--parchment); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--brass); }
+
+        /* Cinematic Hero Section */
         .hero {
-            height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1593116819444-24d101d78211?q=80&w=2000&auto=format&fit=crop');
+            height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1541742425281-c1d3bc8abc46?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -50,85 +60,123 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 5px solid var(--brass);
+            border-bottom: 10px solid var(--leather);
         }
 
-        .hero h1 { font-size: 3.5rem; color: var(--brass); margin-bottom: 10px; font-family: 'Playfair Display', serif; }
-
-        /* Content Sections */
-        .section {
-            padding: 5rem 10%;
-            background-color: var(--forest-floor); /* Dark green/brown section */
+        .hero h1 { font-size: 4.5rem; margin: 0; color: var(--brass); line-height: 1; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin-top: 20px; font-style: italic; color: var(--text-muted); }
+        
+        .cta-button {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid var(--brass);
+            color: var(--brass);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s;
         }
 
-        .checklist-grid {
+        .cta-button:hover { background: var(--brass); color: var(--dark-oak); }
+
+        /* Professional Gallery Grid */
+        .section { padding: 80px 10%; }
+        .section-title { text-align: center; font-size: 3rem; margin-bottom: 50px; color: var(--brass); }
+
+        .gear-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
-        .card {
-            background: var(--oak-dark);
-            padding: 25px;
-            border: 1px solid var(--oak-medium);
-            border-top: 4px solid var(--brass);
-            border-radius: 4px;
+        .gear-card {
+            background: #231a14;
+            border: 1px solid var(--leather);
+            overflow: hidden;
+            transition: 0.5s;
         }
 
-        .card h4 { color: var(--brass); margin-top: 0; }
+        .gear-card:hover { transform: translateY(-10px); border-color: var(--brass); }
 
-        /* Gallery */
-        .gallery-section { padding: 5rem 10%; background: var(--oak-dark); }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-img {
+        .gear-img {
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
-            border: 2px solid var(--oak-medium);
-            filter: sepia(30%) contrast(1.1); /* Makes photos look warmer and woodier */
+            filter: grayscale(30%) contrast(1.1);
         }
 
-        .title { text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 40px; }
+        .gear-info { padding: 25px; }
+        .gear-info h3 { margin: 0; color: var(--brass); text-transform: uppercase; letter-spacing: 1px; }
+        .gear-info p { color: var(--text-muted); font-size: 0.95rem; margin-top: 10px; }
 
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--leather);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <div class="logo">Alex's Custom Fishing Gear</div>
+        <div class="logo">Alex's Custom Gear</div>
         <ul class="nav-links">
-            <li><a href="#gear">Custom Gear</a></li>
-            <li><a href="#gallery">The Field</a></li>
+            <li><a href="#about">The Craft</a></li>
+            <li><a href="#gear">The Gear</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Handcrafted For The Hunt</h1>
-        <p>Expertly built equipment that honors the tradition of the water.</p>
+        <h1>Legacy On The Line</h1>
+        <p>Premium, handcrafted fishing equipment designed for the serious angler who values tradition and performance.</p>
+        <button class="cta-button">View Full Catalog</button>
     </header>
 
     <section id="gear" class="section">
-        <h2 class="title">Bespoke Equipment</h2>
-        <div class="checklist-grid">
-            <div class="card">
-                <h4>Custom Rods</h4>
-                <p>• Hand-turned Walnut Grips<br>• Custom Thread Wrappings<br>• Precision Performance</p>
+        <h2 class="section-title">The Equipment</h2>
+        <div class="gear-grid">
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1615822606443-6c7081736186?q=80&w=800&auto=format&fit=crop" class="gear-img" alt="Professional Fishing Reel">
+                <div class="gear-info">
+                    <h3>Pro-Series Casting Reels</h3>
+                    <p>Brass-geared precision components with a weather-worn finish. Built for the heaviest fights.</p>
+                </div>
             </div>
-            <div class="card">
-                <h4>Signature Tackle</h4>
-                <p>• Brass-finished Hardware<br>• Hand-tied Flies & Lures<br>• Heavy-duty Storage</p>
+
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop" class="gear-img" alt="Custom Fishing Rods">
+                <div class="gear-info">
+                    <h3>Hand-Turned Oak Rods</h3>
+                    <p>Each handle is hand-turned from reclaimed oak and balanced for maximum sensitivity and power.</p>
+                </div>
             </div>
-            <div class="card">
-                <h4>Rugged Apparel</h4>
-                <p>• Weathered Leather Accents<br>• Heavyweight Cotton Canvas<br>• Reinforced Stitching</p>
+
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=800&auto=format&fit=crop" class="gear-img" alt="Hand-painted Lures">
+                <div class="gear-info">
+                    <h3>Artisan Lure Collection</h3>
+                    <p>Individually hand-painted lures designed to mimic local baitfish with stunning realism.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="gallery-section">
+    <footer>
+        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | CRAFTED IN THE USA</p>
+    </footer>
+
+</body>
+</html>
