@@ -12,168 +12,177 @@
             --deep-river: #050a0f;
         }
 
-        * { cursor: none; } /* Hides default cursor for the custom brass one */
+        * { cursor: none; }
 
         body {
             margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; color: #fff;
             background-color: var(--deep-river);
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
                               url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000&auto=format&fit=crop');
             background-attachment: fixed; background-size: cover; background-position: center;
             scroll-behavior: smooth; overflow-x: hidden;
         }
 
-        /* CUSTOM BRASS CURSOR */
         #cursor {
-            width: 20px; height: 20px; border: 2px solid var(--brass);
+            width: 15px; height: 15px; border: 2px solid var(--brass);
             border-radius: 50%; position: fixed; pointer-events: none;
             z-index: 9999; transition: transform 0.1s ease;
-            box-shadow: 0 0 10px var(--gold-glow);
+            box-shadow: 0 0 15px var(--gold-glow); background: rgba(212, 175, 55, 0.1);
         }
 
-        /* ANIMATIONS */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
-        .reveal { animation: fadeIn 1.5s ease forwards; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* Navigation */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 8%; background: rgba(0, 0, 0, 0.9);
+            padding: 1.5rem 8%; background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px); border-bottom: 1px solid var(--brass);
             position: sticky; top: 0; z-index: 1000;
         }
 
         .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--brass); text-transform: uppercase; font-weight: 900; letter-spacing: 4px; }
         .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; }
-        .nav-links a { text-decoration: none; color: #bbb; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+        .nav-links a { text-decoration: none; color: #bbb; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--brass); }
 
-        /* Cinematic Hero */
         .hero {
-            height: 70vh; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center; padding: 0 5%;
+            height: 80vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center;
         }
 
-        .hero h1 { 
-            font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 5rem); 
-            color: var(--brass); margin: 0; text-transform: uppercase; 
-            font-style: italic; letter-spacing: -2px; opacity: 0; 
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6rem); color: var(--brass); margin: 0; text-transform: uppercase; font-style: italic; letter-spacing: -2px; }
+        
+        .status-container { margin-top: 30px; text-align: center; }
+        .status-bar { width: 250px; height: 6px; background: rgba(255,255,255,0.1); margin: 10px auto; position: relative; border-radius: 10px; }
+        .status-fill { width: 40%; height: 100%; background: var(--brass); border-radius: 10px; box-shadow: 0 0 10px var(--brass); }
+
+        .section { padding: 120px 10%; }
+        .title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 60px; text-transform: uppercase; letter-spacing: 8px; }
+
+        .workshop-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
         }
 
-        /* BUILD SLOTS AVAILABILITY BAR */
-        .status-bar {
-            width: 300px; height: 30px; border: 1px solid #333;
-            background: rgba(0,0,0,0.5); margin: 20px 0; position: relative;
-            overflow: hidden; border-radius: 2px;
+        .gear-card {
+            background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden; transition: 0.5s; position: relative;
         }
-        .status-fill {
-            width: 40%; height: 100%; background: var(--brass);
-            box-shadow: 0 0 15px var(--brass);
-        }
-        .status-text { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; color: var(--brass); }
 
-        .section { padding: 100px 10%; }
-        .title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 60px; text-transform: uppercase; letter-spacing: 5px; }
+        .gear-card:hover { border-color: var(--brass); transform: scale(1.02); }
+        .gear-card img { width: 100%; height: 400px; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .gear-card:hover img { opacity: 1; }
 
         .artisan-card {
-            background: rgba(10, 15, 20, 0.85); padding: 60px; border-radius: 2px;
-            border: 1px solid rgba(212, 175, 55, 0.2); max-width: 900px; margin: 0 auto;
-            position: relative;
+            background: rgba(5, 10, 15, 0.9); padding: 60px; border: 1px solid rgba(212, 175, 55, 0.2); 
+            max-width: 900px; margin: 0 auto; box-shadow: 0 40px 100px rgba(0,0,0,0.8);
         }
 
         input, textarea, select {
             width: 100%; padding: 20px; margin-bottom: 30px;
-            background: #000; border: 1px solid #333; color: white; border-radius: 0;
+            background: #000; border: 1px solid #222; color: white; border-radius: 0;
         }
 
         .btn {
             background: var(--brass); color: #000; border: none; padding: 20px;
-            font-weight: 900; text-transform: uppercase; cursor: none; width: 100%; letter-spacing: 4px;
+            font-weight: 900; text-transform: uppercase; width: 100%; letter-spacing: 4px; transition: 0.3s;
         }
 
-        footer { padding: 80px; text-align: center; font-size: 0.6rem; background: #000; border-top: 1px solid #222; letter-spacing: 3px; color: #444; }
+        .btn:hover { background: #fff; }
 
+        /* Floating Order Button */
+        .fab {
+            position: fixed; bottom: 30px; right: 30px; background: var(--brass);
+            color: black; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            z-index: 100; font-size: 0.7rem; text-align: center; line-height: 1;
+        }
+
+        footer { padding: 100px; text-align: center; font-size: 0.6rem; background: #000; letter-spacing: 4px; color: #444; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
 
     <div id="cursor"></div>
+    <a href="#order" class="fab">ORDER<br>NOW</a>
 
     <nav>
         <div class="logo">Alex's Custom Gear</div>
         <ul class="nav-links">
+            <li><a href="#workshop">The Workshop</a></li>
             <li><a href="#order">Commissions</a></li>
             <li><a href="#reviews">Testimonials</a></li>
-            <li><a href="#support">Support</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1 class="reveal">Legacy on the Line</h1>
-        <p class="reveal" style="animation-delay: 0.5s;">Hand-Forged Tackle. Guided by the Current.</p>
-        
-        <div class="status-bar reveal" style="animation-delay: 1s;">
-            <div class="status-fill"></div>
+        <h1 style="animation: slideIn 1.5s ease;">Legacy on the Line</h1>
+        <div class="status-container" style="animation: slideIn 2s ease;">
+            <div class="status-bar"><div class="status-fill"></div></div>
+            <p style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--brass);">2 Custom Build Slots Open for April</p>
         </div>
-        <p class="status-text reveal" style="animation-delay: 1s;">2 Build Slots Remaining for April</p>
     </header>
 
-    <section id="order" class="section">
-        <h2 class="title">The Commission</h2>
+    <section id="workshop" class="section reveal">
+        <h2 class="title">The Workshop</h2>
+        <div class="workshop-grid">
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1615822606443-6c7081736186?q=80&w=800">
+                <div style="padding: 20px;"><h3>Titan Series</h3><p style="font-size: 0.8rem; opacity: 0.6;">Precision brass internals.</p></div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=800">
+                <div style="padding: 20px;"><h3>Artisan Lures</h3><p style="font-size: 0.8rem; opacity: 0.6;">Hand-painted legacy patterns.</p></div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1499652848871-1527a310b13a?q=80&w=800">
+                <div style="padding: 20px;"><h3>The Rod Room</h3><p style="font-size: 0.8rem; opacity: 0.6;">Where wood meets water.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="section reveal">
+        <h2 class="title">Initiate Build</h2>
         <div class="artisan-card">
             <form>
-                <label style="display:block; margin-bottom:10px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Build Category</label>
-                <select>
-                    <option>Custom Hand-Turned Rod</option>
-                    <option>Bespoke Brass Reel</option>
-                    <option>Full Inventory Expedition Pack</option>
-                </select>
+                <select><option>Custom Hand-Turned Rod</option><option>Bespoke Brass Reel</option><option>Full Expedition Pack</option></select>
                 <input type="text" placeholder="Full Name">
-                <textarea rows="4" placeholder="Detail your project specifics..."></textarea>
-                <button type="submit" class="btn">Initiate Build</button>
+                <textarea rows="4" placeholder="Detail your project..."></textarea>
+                <button type="submit" class="btn">Start Commission</button>
             </form>
         </div>
     </section>
 
-    <section id="reviews" class="section" style="background: rgba(0,0,0,0.4);">
-        <h2 class="title">Angler Reports</h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-style: italic;">
-            <p>"The walnut rod Alex built me is a masterpiece. It feels alive in the water."</p>
-            <span style="color: var(--brass); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">— Mike R. | Master Angler</span>
-        </div>
-    </section>
-
-    <section id="support" class="section" style="text-align: center;">
-        <h2 class="title">Shop Maintenance</h2>
-        <div class="artisan-card">
-            <p style="margin-bottom: 30px;">Support the craft and material sourcing.</p>
-            <a href="https://paypal.me/yourusername" style="color: var(--brass); text-decoration: none; border: 1px solid var(--brass); padding: 10px 20px; margin: 10px; display: inline-block;">PayPal</a>
-            <a href="https://cash.app/$yourusername" style="color: var(--brass); text-decoration: none; border: 1px solid var(--brass); padding: 10px 20px; margin: 10px; display: inline-block;">CashApp</a>
-        </div>
-    </section>
-
     <footer>
-        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | HAND-FORGED QUALITY</p>
+        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | FORGED IN TRADITION</p>
     </footer>
 
     <script>
-        // Custom Cursor Logic
         const cursor = document.getElementById('cursor');
         document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
 
-        // Add grow effect on hoverable elements
+        // Scroll Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
         const links = document.querySelectorAll('a, button, select, input');
         links.forEach(link => {
-            link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
+            link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(3)');
             link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
         });
     </script>
-
 </body>
 </html>
