@@ -8,82 +8,72 @@
     <style>
         :root {
             --brass: #c5a059;
-            --river-dark: #0c1c2b;
-            --text: #d7ccc8;
-            --glass: rgba(0, 0, 0, 0.75);
+            --text: #ffffff;
+            --glass: rgba(0, 0, 0, 0.85);
         }
 
         body {
             margin: 0;
             color: var(--text);
-            background-color: var(--river-dark);
-            background-image: url('https://www.transparenttextures.com/patterns/p4.png');
+            /* NEW: Direct High-Def River Background */
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2000&auto=format&fit=crop');
+            background-attachment: fixed; /* Makes the river stay put while you scroll */
+            background-size: cover;
+            background-position: center;
             font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
         }
 
         h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
 
-        /* Professional Navigation */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem 8%; background: rgba(0,0,0,0.95);
-            border-bottom: 2px solid #1b4f72; position: sticky; top: 0; z-index: 1000;
+            padding: 1rem 8%; background: rgba(0,0,0,0.9);
+            border-bottom: 2px solid var(--brass); position: sticky; top: 0; z-index: 1000;
         }
 
         .logo { font-size: 1.2rem; letter-spacing: 3px; color: var(--brass); text-transform: uppercase; font-weight: 900; }
         .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; }
-        .nav-links a { text-decoration: none; color: white; font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--brass); }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; }
 
-        /* Hero */
         .hero {
             height: 60vh; display: flex; flex-direction: column; justify-content: center;
             align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
-            url('https://images.unsplash.com/photo-1593116819444-24d101d78211?q=80&w=2000');
-            background-size: cover; background-position: center; border-bottom: 5px solid var(--brass);
+            background: rgba(0,0,0,0.3); /* Let the river show through */
         }
 
         .section { padding: 80px 10%; }
-        .title { text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 50px; text-transform: uppercase; letter-spacing: 3px; }
+        .title { text-align: center; font-size: 3rem; color: var(--brass); margin-bottom: 50px; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
 
-        /* Order Form */
         .glass-box {
-            background: var(--glass); padding: 50px; border: 1px solid #3c2a21;
-            border-top: 4px solid var(--brass); border-radius: 8px; max-width: 800px; margin: 0 auto;
+            background: var(--glass); padding: 50px; border: 1px solid var(--brass);
+            border-radius: 12px; max-width: 800px; margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         input, textarea, select {
             width: 100%; padding: 15px; margin: 10px 0 25px 0;
-            background: rgba(255,255,255,0.05); border: 1px solid #444; color: white; border-radius: 4px;
+            background: rgba(255,255,255,0.1); border: 1px solid #666; color: white; border-radius: 4px;
         }
 
         .btn {
             background: var(--brass); color: black; border: none; padding: 18px 30px;
-            font-weight: 900; text-transform: uppercase; cursor: pointer; width: 100%; letter-spacing: 2px;
+            font-weight: 900; text-transform: uppercase; cursor: pointer; width: 100%;
         }
 
-        /* Reviews */
         .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .review-card { background: var(--glass); padding: 30px; border-radius: 8px; border: 1px solid #222; }
-        .stars { color: var(--brass); font-size: 1.2rem; margin-bottom: 10px; }
-
-        /* Support Section */
-        .support-banner {
-            text-align: center; background: linear-gradient(rgba(27, 79, 114, 0.4), rgba(0,0,0,0.8));
-            padding: 60px; border: 1px solid var(--brass); border-radius: 12px;
-        }
+        .review-card { background: var(--glass); padding: 30px; border-radius: 8px; border: 1px solid #333; }
+        .stars { color: var(--brass); margin-bottom: 10px; }
 
         .pay-link {
             display: inline-block; margin: 15px; padding: 15px 40px;
             background: var(--brass); color: black; text-decoration: none;
-            font-weight: bold; border-radius: 4px; transition: 0.3s;
+            font-weight: bold; border-radius: 4px;
         }
 
-        footer { padding: 50px; text-align: center; font-size: 0.75rem; opacity: 0.5; letter-spacing: 2px; }
+        footer { padding: 50px; text-align: center; font-size: 0.8rem; background: rgba(0,0,0,0.8); }
 
-        @media (max-width: 768px) { .nav-links { display: none; } }
     </style>
 </head>
 <body>
@@ -91,33 +81,30 @@
     <nav>
         <div class="logo">Alex's Custom Gear</div>
         <ul class="nav-links">
-            <li><a href="#order">Order Custom</a></li>
+            <li><a href="#order">Order</a></li>
             <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#support">Support Alex</a></li>
+            <li><a href="#support">Support</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1 style="font-size: 4rem; color: var(--brass); margin: 0;">Legacy on the Line</h1>
-        <p style="font-style: italic; letter-spacing: 1px;">Handcrafted gear. Built for the river of life.</p>
+        <h1 style="font-size: 4.5rem; color: var(--brass); margin: 0; text-shadow: 2px 2px 15px rgba(0,0,0,0.7);">Legacy on the Line</h1>
+        <p style="font-size: 1.2rem; font-style: italic;">Premium Gear. Handcrafted on the Water.</p>
     </header>
 
     <section id="order" class="section">
         <h2 class="title">Commission a Build</h2>
         <div class="glass-box">
             <form action="#">
-                <label>Select Your Build</label>
+                <label>Build Type</label>
                 <select>
-                    <option>Custom Hand-Turned Rod</option>
-                    <option>Bespoke Brass Reel</option>
-                    <option>Premium Line & Tackle Set</option>
-                    <option>Full Custom Inventory Pack</option>
+                    <option>Custom Rod</option>
+                    <option>Handcrafted Reel</option>
+                    <option>Full Inventory Set</option>
                 </select>
-                <label>Angler Name</label>
                 <input type="text" placeholder="Your Name">
-                <label>Build Specifics</label>
-                <textarea rows="5" placeholder="Tell Alex about wood preferences, rod weight, or target species..."></textarea>
-                <button type="submit" class="btn">Send Design Inquiry</button>
+                <textarea rows="5" placeholder="Details (Wood type, balance, etc.)"></textarea>
+                <button type="submit" class="btn">Send Inquiry</button>
             </form>
         </div>
     </section>
@@ -127,30 +114,23 @@
         <div class="review-grid">
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p>"The walnut rod handle Alex made for me feels alive in the water. True craftsmanship."</p>
+                <p>"The custom rod is perfectly balanced. Best gear I've ever owned."</p>
                 <small>— Mike R.</small>
             </div>
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p>"Best reel I've ever owned. You can tell it was built by someone who actually fishes."</p>
+                <p>"Beautiful craftsmanship. The river-inspired design is stunning."</p>
                 <small>— Sarah J.</small>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>"Ordered a custom line setup. The balance is perfect. Worth every penny."</p>
-                <small>— Capt. Pete</small>
             </div>
         </div>
     </section>
 
-    <section id="support" class="section">
-        <div class="support-banner">
-            <h2 style="color:var(--brass); margin-top:0;">Support the Craft</h2>
-            <p>Help Alex keep the workshop running and source premium materials for the next generation of gear.</p>
-            <div style="margin-top: 30px;">
-                <a href="https://paypal.me/yourusername" class="pay-link" target="_blank">PayPal Support</a>
-                <a href="https://cash.app/$yourusername" class="pay-link" target="_blank">CashApp Support</a>
-            </div>
+    <section id="support" class="section" style="text-align: center;">
+        <div class="glass-box">
+            <h2 style="color:var(--brass); margin-top:0;">Support Alex</h2>
+            <p>Help fund the materials for future handcrafted rods and reels.</p>
+            <a href="https://paypal.me/yourusername" class="pay-link" target="_blank">PayPal</a>
+            <a href="https://cash.app/$yourusername" class="pay-link" target="_blank">CashApp</a>
         </div>
     </section>
 
