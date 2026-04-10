@@ -3,106 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Custom Fishing Gear | Handcrafted Excellence</title>
+    <title>Alex's Custom Fishing Gear</title>
     <style>
         :root {
-            /* Keep previous colors but add a blue-river accent */
-            --dark-oak: #1a120b;
-            --leather: #3c2a21;
-            --brass: #c5a059;
-            --forest: #283618;
-            --parchment: #d7ccc8;
-            --river-blue: #1b4f72; /* Subtle blue for borders/accents */
+            --brass: #c5a059; --parchment: #d7ccc8; --river-blue: #1b4f72;
         }
-
         body {
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            line-height: 1.6;
-            color: var(--parchment);
-            scroll-behavior: smooth;
-
-            /* NEW: Blue River repeating background for the ENTIRE website */
-            background-color: #0c1c2b; /* Dark deep-water base */
-            background-image: url('https://www.transparenttextures.com/patterns/p4.png'); /* Repeating water texture */
-            background-repeat: repeat;
+            font-family: 'Playfair Display', serif; margin: 0; color: var(--parchment);
+            background-color: #0c1c2b; 
+            background-image: url('https://www.transparenttextures.com/patterns/p4.png');
+            background-repeat: repeat; scroll-behavior: smooth;
         }
-
-        /* Fixed Navigation - remains above the "river" flow */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 10%;
-            background: rgba(0, 0, 0, 0.9); /* Fully black to contrast with blue background */
-            border-bottom: 2px solid var(--river-blue);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 10%; background: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid var(--river-blue); position: sticky; top: 0; z-index: 1000;
         }
-
-        .logo { font-size: 1.4rem; font-weight: bold; color: var(--brass); text-transform: uppercase; letter-spacing: 2px; }
-        .nav-links { list-style: none; display: flex; gap: 2rem; padding: 0; }
-        .nav-links a { text-decoration: none; color: var(--parchment); }
-        .nav-links a:hover { color: var(--brass); }
-
-        /* Hero */
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--brass); text-transform: uppercase; letter-spacing: 2px; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--parchment); font-size: 0.8rem; text-transform: uppercase; }
         .hero {
-            height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1593116819444-24d101d78211?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 5px solid var(--brass);
+            height: 60vh; display: flex; flex-direction: column; justify-content: center; 
+            align-items: center; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+            url('https://images.unsplash.com/photo-1593116819444-24d101d78211?q=80&w=2000');
+            background-size: cover; background-position: center; border-bottom: 4px solid var(--brass);
         }
-
-        .hero h1 { font-size: 3.5rem; color: var(--brass); margin-bottom: 10px; }
-
-        /* Content Sections - now inherit the blue-water background */
-        .section {
-            padding: 5rem 10%;
-            background-color: transparent; /* Makes sections see-through to the body background */
+        .section { padding: 4rem 10%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card { 
+            background: rgba(0, 0, 0, 0.7); padding: 30px; border: 1px solid #3c2a21;
+            border-top: 4px solid var(--brass); border-radius: 4px; 
         }
-
-        .checklist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: rgba(0, 0, 0, 0.7); /* Translucent black to read text over blue water */
-            padding: 25px;
-            border: 1px solid var(--leather);
-            border-top: 4px solid var(--brass);
-            border-radius: 4px;
-        }
-
-        .card h4 { color: var(--brass); margin-top: 0; }
-
-        /* Gallery */
-        .gallery-section { padding: 5rem 10%; background: rgba(0, 0, 0, 0.5); /* Semi-transparent */ }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border: 2px solid var(--oak-medium);
-            filter: sepia(30%) contrast(1.1);
-        }
-
-        .title { text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 40px; }
-
+        .card h4 { color: var(--brass); margin-top: 0; text-transform: uppercase; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .gallery-img { width: 100%; height: 250px; object-fit: cover; border: 1px solid var(--brass); }
+        .title { text-align: center; font-size: 2.2rem; color: var(--brass); margin-bottom: 30px; text-transform: uppercase; }
+        footer { padding: 40px; text-align: center; font-size: 0.7rem; color: #555; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head
+</head>
+<body>
+    <nav>
+        <div class="logo">Alex's Custom Gear</div>
+        <ul class="nav-links">
+            <li><a href="#gear">Equipment</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1 style="font-size: 3rem; color: var(--brass); margin: 0;">Handcrafted For The Hunt</h1>
+        <p style="font-style: italic; opacity: 0.8;">Gear that honors the tradition of the water.</p>
+    </header>
+
+    <section id="gear" class="section">
+        <h2 class="title">Bespoke Equipment</h2>
+        <div class="grid">
+            <div class="card">
+                <h4>Custom Rods</h4>
+                <p>• Hand-turned Walnut Grips<br>• Custom Thread Wrappings<br>• Precision Balanced</p>
+            </div>
+            <div class="card">
+                <h4>Signature Tackle</h4>
+                <p>• Brass-finished Hardware<br>• Hand-tied Flies & Lures<br>• Heavy-duty Storage</p>
+            </div>
+            <div class="card">
+                <h4>Rugged Apparel</h4>
+                <p>• Weathered Leather Accents<br>• Heavyweight Canvas<br>• Reinforced Stitching</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section" style="background: rgba(0,0,0,0.3);">
+        <h2 class="title">The Field</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800" class="gallery-img">
+            <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=800" class="gallery-img">
+            <img src="https://images.unsplash.com/photo-1499652848871-1527a310b13a?q=80&w=800" class="gallery-img">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | ESTABLISHED ON THE WATER</p>
+    </footer>
+</body>
+</html>
