@@ -3,128 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Custom Gear | Artisan Fishing Equipment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <title>Alex's Custom Fishing Gear | Handcrafted Excellence</title>
     <style>
         :root {
-            --deep-black: #0a0a0a;
-            --burned-orange: #b3541e;
-            --warm-wood: #3d2b1f;
-            --parchment: #d7ccc8;
+            /* Keep previous colors but add a blue-river accent */
+            --dark-oak: #1a120b;
+            --leather: #3c2a21;
             --brass: #c5a059;
-            --slate: #1c1c1c;
+            --forest: #283618;
+            --parchment: #d7ccc8;
+            --river-blue: #1b4f72; /* Subtle blue for borders/accents */
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             margin: 0;
-            background-color: var(--deep-black);
+            line-height: 1.6;
             color: var(--parchment);
             scroll-behavior: smooth;
-            overflow-x: hidden;
+
+            /* NEW: Blue River repeating background for the ENTIRE website */
+            background-color: #0c1c2b; /* Dark deep-water base */
+            background-image: url('https://www.transparenttextures.com/patterns/p4.png'); /* Repeating water texture */
+            background-repeat: repeat;
         }
 
-        h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
-
+        /* Fixed Navigation - remains above the "river" flow */
         nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem 8%; background: rgba(10, 10, 10, 0.98);
-            border-bottom: 1px solid var(--warm-wood); position: sticky; top: 0; z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            background: rgba(0, 0, 0, 0.9); /* Fully black to contrast with blue background */
+            border-bottom: 2px solid var(--river-blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo { font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; color: var(--brass); font-weight: 900; }
-        .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--parchment); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--burned-orange); }
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--brass); text-transform: uppercase; letter-spacing: 2px; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; padding: 0; }
+        .nav-links a { text-decoration: none; color: var(--parchment); }
+        .nav-links a:hover { color: var(--brass); }
 
+        /* Hero */
         .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)), 
-                        url('http://googleusercontent.com/image_collection/image_retrieval/1017198044699933683_2');
-            background-attachment: fixed;
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1593116819444-24d101d78211?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--brass);
         }
 
-        .hero h1 { font-size: 5rem; color: var(--brass); margin: 0; line-height: 1; }
-        .hero p { font-size: 1.2rem; max-width: 600px; margin-top: 20px; font-style: italic; opacity: 0.8; }
+        .hero h1 { font-size: 3.5rem; color: var(--brass); margin-bottom: 10px; }
 
-        .section { padding: 100px 10%; position: relative; }
-        .section-title { text-align: center; font-size: 3rem; margin-bottom: 60px; color: var(--brass); text-transform: uppercase; letter-spacing: 4px; }
+        /* Content Sections - now inherit the blue-water background */
+        .section {
+            padding: 5rem 10%;
+            background-color: transparent; /* Makes sections see-through to the body background */
+        }
 
-        .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .gear-card { background: var(--slate); border: 1px solid #333; transition: 0.5s; position: relative; border-radius: 4px; overflow: hidden; }
-        .gear-card:hover { transform: translateY(-15px); border-color: var(--brass); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        .gear-img { width: 100%; height: 400px; object-fit: cover; transition: 0.7s; filter: grayscale(20%) contrast(1.1); }
-        .gear-card:hover .gear-img { transform: scale(1.05); filter: grayscale(0%); }
-        .gear-info { padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); position: absolute; bottom: 0; width: 100%; box-sizing: border-box; }
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
-        .order-wrapper { max-width: 900px; margin: 0 auto; background: #111; padding: 60px; border: 1px solid var(--warm-wood); border-radius: 8px; }
-        input, textarea, select { width: 100%; padding: 18px; margin: 10px 0 30px 0; background: #000; border: 1px solid #333; color: white; border-radius: 4px; }
-        .submit-btn { background: var(--burned-orange); color: white; border: none; padding: 20px; width: 100%; font-weight: 900; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; transition: 0.3s; }
+        .card {
+            background: rgba(0, 0, 0, 0.7); /* Translucent black to read text over blue water */
+            padding: 25px;
+            border: 1px solid var(--leather);
+            border-top: 4px solid var(--brass);
+            border-radius: 4px;
+        }
 
-        .support-banner { background: var(--warm-wood); padding: 80px 10%; text-align: center; border-radius: 10px; border: 1px solid var(--brass); }
-        .pay-links a { display: inline-block; margin: 15px; padding: 15px 45px; background: var(--brass); color: black; text-decoration: none; font-weight: bold; border-radius: 4px; }
+        .card h4 { color: var(--brass); margin-top: 0; }
 
-        footer { padding: 60px; text-align: center; font-size: 0.7rem; color: #666; letter-spacing: 3px; border-top: 1px solid #222; }
+        /* Gallery */
+        .gallery-section { padding: 5rem 10%; background: rgba(0, 0, 0, 0.5); /* Semi-transparent */ }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 3rem; } .nav-links { display: none; } }
+        .gallery-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border: 2px solid var(--oak-medium);
+            filter: sepia(30%) contrast(1.1);
+        }
+
+        .title { text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 40px; }
+
     </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">ALEX'S CUSTOM GEAR</div>
-        <ul class="nav-links">
-            <li><a href="#gear">Collection</a></li>
-            <li><a href="#order">Commission</a></li>
-            <li><a href="#support">Support</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <h1>Mastery of the Water</h1>
-        <p>Heirloom-quality fishing gear. Handcrafted in the USA.</p>
-    </header>
-
-    <section id="gear" class="section">
-        <h2 class="section-title">The Current Collection</h2>
-        <div class="gear-grid">
-            <div class="gear-card">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/1626028723431207617_2" class="gear-img">
-                <div class="gear-info"><h3>Artisan Reels</h3><p>Custom brass & polished wood</p></div>
-            </div>
-            <div class="gear-card">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/1340404487239909229_0" class="gear-img">
-                <div class="gear-info"><h3>Heritage Rods</h3><p>Hand-turned wood handles</p></div>
-            </div>
-            <div class="gear-card">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/786583799783051099_2" class="gear-img">
-                <div class="gear-info"><h3>Ghost Lures</h3><p>Hand-carved wood patterns</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="order" class="section">
-        <h2 class="section-title">Start Your Custom Build</h2>
-        <div class="order-wrapper">
-            <form action="#">
-                <label>Select Project Type</label>
-                <select>
-                    <option>Custom Casting Reel</option>
-                    <option>Artisan Fishing Rod</option>
-                    <option>Full Matched Set</option>
-                </select>
-                <label>Angler Name</label>
-                <input type="text" placeholder="Your Full Name">
-                <label>Build Specifications</label>
-                <textarea rows="6" placeholder="Describe wood preferences, balance requirements, or specific target species..."></textarea>
-                <button type="submit" class="submit-btn">Submit Commission Inquiry</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="support" class="section">
-        <div class="support-banner">
-            <h2 style="color:var(--brass); font-size: 2.5rem; margin-top: 0;">Support the Shop</h2>
-            <p>Every contribution helps us maintain our artisan workshop and source rare materials
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head
