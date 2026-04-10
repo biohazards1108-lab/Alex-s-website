@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angler's Edge | Premium Outdoor Fishing</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #27ae60;
+            --light: #f4f7f6;
+            --white: #ffffff;
+            --dark: #1a252f;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 500; }
+
+        /* Hero */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        /* Gear Checklist Section */
+        .checklist-container {
+            padding: 5rem 10%;
+            background: var(--white);
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-item {
+            background: var(--light);
+            padding: 20px;
+            border-left: 5px solid var(--accent);
+            border-radius: 4px;
+        }
+
+        .checklist-item h4 { margin-top: 0; color: var(--primary); }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 10%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-img:hover { transform: scale(1.02); }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ANGLER'S EDGE</div>
+        <ul class="nav-links">
+            <li><a href="#">Expeditions</a></li>
+            <li><a href="#">Gear</a></li>
+            <li><a href="#">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Essential Gear for the Wild</h1>
+        <p>Preparedness is the difference between a story and a catch.</p>
+    </header>
+
+    <section class="checklist-container">
+        <h2 class="section-title">The Expedition Checklist</h2>
+        <p class="section-subtitle">Never head to the water under-equipped.</p>
+        
+        <div class="checklist-grid">
+            <div class="checklist-item">
+                <h4>Core Tackle</h4>
+                <p>• High-tensile Fluorocarbon line<br>• Assorted Circle hooks (Sizes 2-6)<br>• Waterproof tackle management box</p>
+            </div>
+            <div class="checklist-item">
+                <h4>Safety & Navigation</h4>
+                <p>• Polarized UV400 Sunglasses<br>• Compact First Aid kit<br>• Offline GPS/Topographic Map</p>
+            </div>
+            <div class="checklist-item">
+                <h4>Apparel</h4>
+                <p>• Moisture-wicking base layer<br>• Breathable chest waders<br>• Quick-dry utility hat</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--dark); color: white; padding: 5rem 0;">
+        <h2 class="section-title">From the Field</h2>
+        <div class="gallery">
+            <img src="
