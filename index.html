@@ -53,7 +53,6 @@
 
     <header class="hero">
         <h1 style="animation: slideIn 1.5s ease;">Precision Reels & Tackle</h1>
-        <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.7rem; color: var(--brass); margin-top: 20px;">Forged for the Modern Angler</p>
     </header>
 
     <section id="workshop" class="section reveal">
@@ -63,14 +62,14 @@
                 <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?auto=format&fit=crop&q=80&w=1000">
                 <div style="padding: 25px;">
                     <h3 style="color: var(--brass);">Custom Reels</h3>
-                    <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.6;">Precision brass internals paired with artisan hardwood side-plates. Built for heavy river duty and legacy performance.</p>
+                    <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.6;">Precision brass internals paired with artisan hardwood side-plates.</p>
                 </div>
             </div>
             <div class="gear-card">
                 <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&q=80&w=1000">
                 <div style="padding: 25px;">
                     <h3 style="color: var(--brass);">Artisan Tackle</h3>
-                    <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.6;">Individually carved lures and custom-weighted terminal tackle designed to replicate native river prey.</p>
+                    <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.6;">Individually carved lures and custom-weighted terminal tackle.</p>
                 </div>
             </div>
         </div>
@@ -79,8 +78,40 @@
     <section id="order" class="section reveal">
         <h2 class="title">Initiate Build</h2>
         <div class="artisan-card">
-            <form action="https://formspree.io/f/xbdpveyb" method="POST">
+            <form id="orderFormV2" action="https://formspree.io/f/xbdpveyb" method="POST">
                 <input type="hidden" name="_next" value="https://biohazards1108-lab.github.io/Alex-s-website/">
                 
                 <label style="display:block; margin-bottom:10px; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--brass);">Select Category</label>
                 <select name="Category">
+                    <option>Bespoke Brass Reel</option>
+                    <option>Custom Hardwood Reel</option>
+                    <option>Artisan Lure Set</option>
+                    <option>Custom Terminal Tackle</option>
+                </select>
+                
+                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="email" name="Email" placeholder="Email Address" required>
+                <textarea name="Specs" rows="4" placeholder="Describe your custom specs..." required></textarea>
+                
+                <button type="submit" class="btn">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ALEX'S CUSTOM GEAR | REELS & TACKLE</p>
+    </footer>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
