@@ -81,3 +81,39 @@
         </div>
     </section>
     <section id="order" class="section reveal">
+        <h2 class="title">Initiate Build</h2>
+        <div class="artisan-card">
+            <form action="https://formspree.io/f/Biohazards1108@GMAIL.COM" method="POST">
+                <label style="display:block; margin-bottom:10px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--brass);">Gear Choice</label>
+                <select name="GearType">
+                    <option>Custom Hand-Turned Rod</option>
+                    <option>Bespoke Brass Reel</option>
+                    <option>Full Expedition Pack</option>
+                </select>
+                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="4" placeholder="Detail your project..." required></textarea>
+                <button type="submit" class="btn">Start Commission</button>
+            </form>
+        </div>
+    </section>
+    <section id="reviews" class="section reveal">
+        <h2 class="title">Testimonials</h2>
+        <div style="text-align:center; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+            <p>"The walnut rod is a masterpiece. Balanced, precise, and built for a lifetime."</p>
+            <p style="color: var(--brass); font-weight: 600;">— Michael R., Master Angler</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | FORGED IN TRADITION</p>
+    </footer>
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        const links = document.querySelectorAll('a, button, select, input');
+        links.forEach(link => { link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(3)'); link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)'); });
+    </script>
+</body>
+</html>
