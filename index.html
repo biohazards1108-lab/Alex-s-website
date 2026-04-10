@@ -37,4 +37,78 @@
         .gear-card img { width: 100%; height: 400px; object-fit: cover; opacity: 0.7; transition: 0.5s; }
         .gear-card:hover img { opacity: 1; }
         .artisan-card { background: rgba(5, 10, 15, 0.9); padding: 60px; border: 1px solid rgba(212, 175, 55, 0.2); max-width: 900px; margin: 0 auto; box-shadow: 0 40px 100px rgba(0,0,0,0.8); }
-        input, textarea, select { width: 100%; padding: 20px; margin-bottom: 30px; background
+        input, textarea, select { width: 100%; padding: 20px; margin-bottom: 30px; background: #000; border: 1px solid #222; color: white; border-radius: 0; }
+        .btn { background: var(--brass); color: #000; border: none; padding: 20px; font-weight: 900; text-transform: uppercase; width: 100%; letter-spacing: 4px; transition: 0.3s; }
+        .btn:hover { background: #fff; }
+        .fab { position: fixed; bottom: 30px; right: 30px; background: var(--brass); color: black; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 100; font-size: 0.7rem; text-align: center; line-height: 1; }
+        footer { padding: 100px; text-align: center; font-size: 0.6rem; background: #000; letter-spacing: 4px; color: #444; border-top: 1px solid #111; }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <a href="#order" class="fab">ORDER<br>NOW</a>
+    <nav>
+        <div class="logo">Alex's Custom Gear</div>
+        <ul class="nav-links">
+            <li><a href="#workshop">The Workshop</a></li>
+            <li><a href="#order">Commissions</a></li>
+            <li><a href="#reviews">Testimonials</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 style="animation: slideIn 1.5s ease;">Legacy on the Line</h1>
+        <div class="status-container" style="animation: slideIn 2s ease;">
+            <div class="status-bar"><div class="status-fill"></div></div>
+            <p style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--brass);">2 Custom Build Slots Open for April</p>
+        </div>
+    </header>
+    <section id="workshop" class="section reveal">
+        <h2 class="title">The Workshop</h2>
+        <div class="workshop-grid">
+            <div class="gear-card">
+                <img src="https://images.pexels.com/photos/1564839/pexels-photo-1564839.jpeg?auto=compress&cs=tinysrgb&w=800">
+                <div style="padding: 20px;">
+                    <h3>Titan Series</h3>
+                    <p style="font-size: 0.8rem; opacity: 0.6;">Precision engineered reels built to survive the harshest river currents.</p>
+                </div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.pexels.com/photos/1105423/pexels-photo-1105423.jpeg?auto=compress&cs=tinysrgb&w=800">
+                <div style="padding: 20px;">
+                    <h3>Artisan Lures</h3>
+                    <p style="font-size: 0.8rem; opacity: 0.6;">Hand-carved patterns designed to replicate native river prey.</p>
+                </div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.pexels.com/photos/1630039/pexels-photo-1630039.jpeg?auto=compress&cs=tinysrgb&w=800">
+                <div style="padding: 20px;">
+                    <h3>The Rod Room</h3>
+                    <p style="font-size: 0.8rem; opacity: 0.6;">Where native walnut meets high-modulus carbon for the perfect cast.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="order" class="section reveal">
+        <h2 class="title">Initiate Build</h2>
+        <div class="artisan-card">
+            <form>
+                <select><option>Custom Hand-Turned Rod</option><option>Bespoke Brass Reel</option><option>Full Expedition Pack</option></select>
+                <input type="text" placeholder="Full Name">
+                <textarea rows="4" placeholder="Detail your project..."></textarea>
+                <button type="submit" class="btn">Start Commission</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | FORGED IN TRADITION</p>
+    </footer>
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        const links = document.querySelectorAll('a, button, select, input');
+        links.forEach(link => { link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(3)'); link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)'); });
+    </script>
+</body>
+</html>
