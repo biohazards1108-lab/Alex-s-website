@@ -6,40 +6,35 @@
     <title>Alex's Custom Gear | Artisan Fishing Equipment</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --brass: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.3);
-            --deep-river: #050a0f;
-        }
-
+        :root { --brass: #d4af37; --gold-glow: rgba(212, 175, 55, 0.3); --deep-river: #050a0f; }
         * { cursor: none; }
-
         body {
             margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; color: #fff;
             background-color: var(--deep-river);
             background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
-                              url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000&auto=format&fit=crop');
+                              url('https://images.pexels.com/photos/2228667/pexels-photo-2228667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
             background-attachment: fixed; background-size: cover; background-position: center;
             scroll-behavior: smooth; overflow-x: hidden;
         }
-
-        #cursor {
-            width: 15px; height: 15px; border: 2px solid var(--brass);
-            border-radius: 50%; position: fixed; pointer-events: none;
-            z-index: 9999; transition: transform 0.1s ease;
-            box-shadow: 0 0 15px var(--gold-glow); background: rgba(212, 175, 55, 0.1);
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
+        #cursor { width: 15px; height: 15px; border: 2px solid var(--brass); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; box-shadow: 0 0 15px var(--gold-glow); background: rgba(212, 175, 55, 0.1); }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 8%; background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px); border-bottom: 1px solid var(--brass);
-            position: sticky; top: 0
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 8%; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--brass); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--brass); text-transform: uppercase; font-weight: 900; letter-spacing: 4px; }
+        .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; }
+        .nav-links a { text-decoration: none; color: #bbb; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6rem); color: var(--brass); margin: 0; text-transform: uppercase; font-style: italic; letter-spacing: -2px; }
+        .status-container { margin-top: 30px; text-align: center; }
+        .status-bar { width: 250px; height: 6px; background: rgba(255,255,255,0.1); margin: 10px auto; position: relative; border-radius: 10px; }
+        .status-fill { width: 40%; height: 100%; background: var(--brass); border-radius: 10px; box-shadow: 0 0 10px var(--brass); }
+        .section { padding: 120px 10%; }
+        .title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 60px; text-transform: uppercase; letter-spacing: 8px; }
+        .workshop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gear-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; transition: 0.5s; position: relative; }
+        .gear-card:hover { border-color: var(--brass); transform: scale(1.02); }
+        .gear-card img { width: 100%; height: 400px; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .gear-card:hover img { opacity: 1; }
+        .artisan-card { background: rgba(5, 10, 15, 0.9); padding: 60px; border: 1px solid rgba(212, 175, 55, 0.2); max-width: 900px; margin: 0 auto; box-shadow: 0 40px 100px rgba(0,0,0,0.8); }
+        input, textarea, select { width: 100%; padding: 20px; margin-bottom: 30px; background
