@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title Alex's Edge | Premium Outdoor Fishing</title>
+    <title>Alex's Custom Fishing Gear</title>
     <style>
         :root {
             --primary: #2c3e50;
@@ -21,7 +21,6 @@
             background-color: var(--light);
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -34,11 +33,10 @@
             z-index: 1000;
         }
 
-        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+        .logo { font-size: 1.2rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
         .nav-links { list-style: none; display: flex; gap: 2rem; }
         .nav-links a { text-decoration: none; color: var(--primary); font-weight: 500; }
 
-        /* Hero */
         .hero {
             height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
@@ -51,36 +49,32 @@
             align-items: center;
             text-align: center;
             color: var(--white);
+            padding: 0 20px;
         }
 
-        /* Gear Checklist Section */
-        .checklist-container {
-            padding: 5rem 10%;
-            background: var(--white);
-        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
 
+        .checklist-container { padding: 5rem 10%; background: var(--white); }
         .checklist-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .checklist-item {
             background: var(--light);
-            padding: 20px;
+            padding: 25px;
             border-left: 5px solid var(--accent);
             border-radius: 4px;
         }
 
-        .checklist-item h4 { margin-top: 0; color: var(--primary); }
-
-        /* Gallery Section */
         .gallery {
             padding: 5rem 10%;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background: var(--dark);
         }
 
         .gallery-img {
@@ -88,67 +82,56 @@
             height: 300px;
             object-fit: cover;
             border-radius: 8px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
+            transition: 0.3s;
         }
 
-        .gallery-img:hover { transform: scale(1.02); }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
+        .white-text { color: white; margin-bottom: 40px; }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .gallery { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Alex's custom fishing gear</div>
+        <div class="logo">Alex's Custom Fishing Gear</div>
         <ul class="nav-links">
-            <li><a href="#">Expeditions</a></li>
-            <li><a href="#">Gear</a></li>
-            <li><a href="#">Gallery</a></li>
+            <li><a href="#gear">Gear</a></li>
+            <li><a href="#gallery">Gallery</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Essential Gear for the Wild</h1>
-        <p>Preparedness is the difference between a story and a catch.</p>
+        <h1>Alex's Custom Fishing Gear</h1>
+        <p>Premium quality for the dedicated angler.</p>
     </header>
 
-    <section class="checklist-container">
+    <section id="gear" class="checklist-container">
         <h2 class="section-title">The Expedition Checklist</h2>
-        <p class="section-subtitle">Never head to the water under-equipped.</p>
-        
         <div class="checklist-grid">
             <div class="checklist-item">
                 <h4>Core Tackle</h4>
-                <p>• High-tensile Fluorocarbon line<br>• Assorted Circle hooks (Sizes 2-6)<br>• Waterproof tackle management box</p>
+                <p>• Custom Fluorocarbon lines<br>• Hand-selected Hooks<br>• Professional Tackle Management</p>
             </div>
             <div class="checklist-item">
-                <h4>Safety & Navigation</h4>
-                <p>• Polarized UV400 Sunglasses<br>• Compact First Aid kit<br>• Offline GPS/Topographic Map</p>
+                <h4>Safety Gear</h4>
+                <p>• Polarized UV Protection<br>• Emergency First Aid<br>• Precision Navigation Tools</p>
             </div>
             <div class="checklist-item">
                 <h4>Apparel</h4>
-                <p>• Moisture-wicking base layer<br>• Breathable chest waders<br>• Quick-dry utility hat</p>
+                <p>• Performance Base Layers<br>• Waterproof Waders<br>• All-Weather Headwear</p>
             </div>
         </div>
     </section>
 
-    <section style="background: var(--dark); color: white; padding: 5rem 0;">
-        <h2 class="section-title">From the Field</h2>
+    <section id="gallery" style="background: var(--dark); padding-bottom: 5rem;">
+        <h2 class="section-title white-text" style="padding-top: 5rem;">From the Field</h2>
         <div class="gallery">
-            <img src="
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Fishing 1">
+            <img src="https://images.unsplash.com/photo-1499652848871-1527a310b13a?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Fishing 2">
+            <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Fishing 3">
+        </div>
+    </section>
+
+</body>
+</html>
