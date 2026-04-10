@@ -45,4 +45,147 @@
         .hero {
             height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-                        url('
+                        url('https://images.unsplash.com/photo-1541742425281-c1d3bc8abc46?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section { padding: 100px 10%; border-bottom: 1px solid var(--leather); }
+        .section-title { text-align: center; font-size: 3rem; margin-bottom: 50px; color: var(--brass); text-transform: uppercase; letter-spacing: 3px; }
+
+        /* Gear Grid */
+        .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .gear-card { background: #231a14; border: 1px solid var(--leather); transition: 0.4s; overflow: hidden; }
+        .gear-card:hover { transform: translateY(-10px); border-color: var(--brass); }
+        .gear-img { width: 100%; height: 250px; object-fit: cover; filter: sepia(20%); }
+        .gear-info { padding: 25px; }
+        .gear-info h3 { color: var(--brass); margin: 0; text-transform: uppercase; }
+
+        /* Form Styling */
+        .order-container { max-width: 800px; margin: 0 auto; background: #231a14; padding: 40px; border: 1px solid var(--leather); border-top: 5px solid var(--brass); }
+        input, textarea, select { width: 100%; padding: 15px; margin: 10px 0 25px 0; background: var(--dark-oak); border: 1px solid var(--leather); color: var(--parchment); font-family: serif; box-sizing: border-box; }
+        .submit-btn { background: var(--brass); color: var(--dark-oak); border: none; padding: 15px 30px; font-weight: bold; text-transform: uppercase; cursor: pointer; width: 100%; transition: 0.3s; }
+        .submit-btn:hover { background: var(--parchment); }
+
+        /* Reviews */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .review-card { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 4px; border: 1px solid var(--leather); }
+        .stars { color: var(--brass); margin-bottom: 10px; font-size: 1.2rem; }
+
+        /* Support Section */
+        .support-box { text-align: center; background: var(--forest); padding: 60px 20px; border-radius: 8px; border: 1px solid var(--brass); }
+        .pay-links a { display: inline-block; margin: 15px; padding: 12px 35px; background: var(--brass); color: var(--dark-oak); text-decoration: none; font-weight: bold; border-radius: 4px; transition: 0.3s; }
+        .pay-links a:hover { background: var(--parchment); transform: scale(1.05); }
+
+        footer { padding: 50px; text-align: center; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 2px; }
+
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2.5rem; } }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Alex's Custom Gear</div>
+        <ul class="nav-links">
+            <li><a href="#gear">The Gear</a></li>
+            <li><a href="#order">Commission</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1 style="color:var(--brass); font-size: 4rem; margin: 0;">Legacy on the Line</h1>
+        <p>Premium handcrafted tackle for the master angler.</p>
+    </header>
+
+    <section id="gear" class="section">
+        <h2 class="section-title">The Collection</h2>
+        <div class="gear-grid">
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1615822606443-6c7081736186?q=80&w=800" class="gear-img">
+                <div class="gear-info">
+                    <h3>Pro-Series Reels</h3>
+                    <p>Brass-geared components with custom weather-worn finishes.</p>
+                </div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800" class="gear-img">
+                <div class="gear-info">
+                    <h3>Hand-Turned Rods</h3>
+                    <p>Reclaimed oak handles balanced for precision performance.</p>
+                </div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=800" class="gear-img">
+                <div class="gear-info">
+                    <h3>Artisan Lures</h3>
+                    <p>Individually hand-painted to mimic local baitfish realism.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="section">
+        <h2 class="section-title">Place a Custom Order</h2>
+        <div class="order-container">
+            <form action="#">
+                <label>Select Your Build</label>
+                <select>
+                    <option>Custom Casting Reel</option>
+                    <option>Hand-Turned Oak Fishing Rod</option>
+                    <option>Full Expedition Set (Rod & Reel)</option>
+                </select>
+                <label>Your Name</label>
+                <input type="text" placeholder="Full Name">
+                <label>Build Requirements</label>
+                <textarea rows="5" placeholder="Describe the wood type, weight, and specs you want Alex to use..."></textarea>
+                <button type="submit" class="submit-btn">Send Order Request</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="reviews" class="section">
+        <h2 class="section-title">Field Reports</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"The sensitivity in the oak handle is incredible. Best custom rod in my collection."</p>
+                <small>— Mike R., Tournament Angler</small>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Smooth casting and beautiful craftsmanship. Alex is a true artisan."</p>
+                <small>— Sarah J.</small>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Ordered a custom reel for my father; it's now a family heirloom."</p>
+                <small>— Captain Dave</small>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="section">
+        <div class="support-box">
+            <h2 style="color:var(--parchment); margin-top:0;">Support the Shop</h2>
+            <p>Help Alex keep the craft alive. Contributions go directly toward materials.</p>
+            <div class="pay-links">
+                <a href="https://paypal.me/yourusername" target="_blank">PayPal</a>
+                <a href="https://cash.app/$yourusername" target="_blank">CashApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | BUILT FOR THE BATTLE</p>
+    </footer>
+
+</body>
+</html>
