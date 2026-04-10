@@ -26,7 +26,6 @@
 
         h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
 
-        /* Navigation */
         nav {
             display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 8%; background: rgba(10, 10, 10, 0.98);
@@ -38,11 +37,10 @@
         .nav-links a { text-decoration: none; color: var(--parchment); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
         .nav-links a:hover { color: var(--burned-orange); }
 
-        /* Hero with Parallax Effect */
         .hero {
             height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1541742425281-c1d3bc8abc46?q=80&w=2000&auto=format&fit=crop');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)), 
+                        url('http://googleusercontent.com/image_collection/image_retrieval/1017198044699933683_2');
             background-attachment: fixed;
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
@@ -51,32 +49,22 @@
         .hero h1 { font-size: 5rem; color: var(--brass); margin: 0; line-height: 1; }
         .hero p { font-size: 1.2rem; max-width: 600px; margin-top: 20px; font-style: italic; opacity: 0.8; }
 
-        /* Section Styling */
         .section { padding: 100px 10%; position: relative; }
         .section-title { text-align: center; font-size: 3rem; margin-bottom: 60px; color: var(--brass); text-transform: uppercase; letter-spacing: 4px; }
 
-        /* Features/Process */
-        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
-        .process-item i { font-size: 2rem; color: var(--burned-orange); display: block; margin-bottom: 20px; }
-        .process-item h3 { color: var(--brass); margin-bottom: 10px; }
-
-        /* Gear Showcase */
         .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .gear-card { background: var(--slate); border: 1px solid #333; transition: 0.5s; position: relative; border-radius: 4px; overflow: hidden; }
         .gear-card:hover { transform: translateY(-15px); border-color: var(--brass); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        .gear-img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; }
-        .gear-card:hover .gear-img { transform: scale(1.1); }
-        .gear-info { padding: 30px; background: linear-gradient(to top, #111, transparent); position: absolute; bottom: 0; width: 100%; box-sizing: border-box; }
+        .gear-img { width: 100%; height: 400px; object-fit: cover; transition: 0.7s; filter: grayscale(20%) contrast(1.1); }
+        .gear-card:hover .gear-img { transform: scale(1.05); filter: grayscale(0%); }
+        .gear-info { padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); position: absolute; bottom: 0; width: 100%; box-sizing: border-box; }
 
-        /* Order Form */
         .order-wrapper { max-width: 900px; margin: 0 auto; background: #111; padding: 60px; border: 1px solid var(--warm-wood); border-radius: 8px; }
         input, textarea, select { width: 100%; padding: 18px; margin: 10px 0 30px 0; background: #000; border: 1px solid #333; color: white; border-radius: 4px; }
         .submit-btn { background: var(--burned-orange); color: white; border: none; padding: 20px; width: 100%; font-weight: 900; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; transition: 0.3s; }
-        .submit-btn:hover { background: var(--brass); color: black; }
 
-        /* Support Section */
-        .support-banner { background: var(--warm-wood); padding: 80px 10%; text-align: center; border-radius: 10px; }
-        .pay-links a { display: inline-block; margin: 15px; padding: 15px 45px; background: var(--brass); color: black; text-decoration: none; font-weight: bold; border-radius: 4px; transition: 0.3s; }
+        .support-banner { background: var(--warm-wood); padding: 80px 10%; text-align: center; border-radius: 10px; border: 1px solid var(--brass); }
+        .pay-links a { display: inline-block; margin: 15px; padding: 15px 45px; background: var(--brass); color: black; text-decoration: none; font-weight: bold; border-radius: 4px; }
 
         footer { padding: 60px; text-align: center; font-size: 0.7rem; color: #666; letter-spacing: 3px; border-top: 1px solid #222; }
 
@@ -88,7 +76,6 @@
     <nav>
         <div class="logo">ALEX'S CUSTOM GEAR</div>
         <ul class="nav-links">
-            <li><a href="#process">The Craft</a></li>
             <li><a href="#gear">Collection</a></li>
             <li><a href="#order">Commission</a></li>
             <li><a href="#support">Support</a></li>
@@ -100,38 +87,20 @@
         <p>Heirloom-quality fishing gear. Handcrafted in the USA.</p>
     </header>
 
-    <section id="process" class="section">
-        <h2 class="section-title">The Artisan Standard</h2>
-        <div class="process-grid">
-            <div class="process-item">
-                <h3>Sourcing</h3>
-                <p>We use only reclaimed oak, walnut, and cherry woods for superior durability.</p>
-            </div>
-            <div class="process-item">
-                <h3>Engineering</h3>
-                <p>Every reel is precision-balanced with brass components for a lifetime of use.</p>
-            </div>
-            <div class="process-item">
-                <h3>Legacy</h3>
-                <p>Built to be passed down. Our gear isn't just a tool; it's an heirloom.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="gear" class="section" style="background: #050505;">
+    <section id="gear" class="section">
         <h2 class="section-title">The Current Collection</h2>
         <div class="gear-grid">
             <div class="gear-card">
-                <img src="https://images.unsplash.com/photo-1615822606443-6c7081736186?q=80&w=800" class="gear-img">
-                <div class="gear-info"><h3>The Titan Reel</h3><p>Brass & Walnut Hybrid</p></div>
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/1626028723431207617_2" class="gear-img">
+                <div class="gear-info"><h3>Artisan Reels</h3><p>Custom brass & polished wood</p></div>
             </div>
             <div class="gear-card">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800" class="gear-img">
-                <div class="gear-info"><h3>Heritage Rod</h3><p>Reclaimed Oak Handle</p></div>
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/1340404487239909229_0" class="gear-img">
+                <div class="gear-info"><h3>Heritage Rods</h3><p>Hand-turned wood handles</p></div>
             </div>
             <div class="gear-card">
-                <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=800" class="gear-img">
-                <div class="gear-info"><h3>Ghost Lures</h3><p>Artisan Hand-Painted</p></div>
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/786583799783051099_2" class="gear-img">
+                <div class="gear-info"><h3>Ghost Lures</h3><p>Hand-carved wood patterns</p></div>
             </div>
         </div>
     </section>
@@ -158,17 +127,4 @@
     <section id="support" class="section">
         <div class="support-banner">
             <h2 style="color:var(--brass); font-size: 2.5rem; margin-top: 0;">Support the Shop</h2>
-            <p>Every contribution helps us maintain our artisan workshop and source rare materials.</p>
-            <div class="pay-links">
-                <a href="https://paypal.me/yourusername" target="_blank">PayPal</a>
-                <a href="https://cash.app/$yourusername" target="_blank">CashApp</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | CRAFTED FOR THE BATTLE</p>
-    </footer>
-
-</body>
-</html>
+            <p>Every contribution helps us maintain our artisan workshop and source rare materials
