@@ -3,89 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Custom Fishing Gear</title>
+    <title>Alex's Custom Gear</title>
     <style>
-        :root {
-            --brass: #c5a059; --parchment: #d7ccc8; --river-blue: #1b4f72;
-        }
+        :root { --brass: #c5a059; --text: #d7ccc8; }
         body {
-            font-family: 'Playfair Display', serif; margin: 0; color: var(--parchment);
-            background-color: #0c1c2b; 
+            margin: 0; color: var(--text); background-color: #0c1c2b;
             background-image: url('https://www.transparenttextures.com/patterns/p4.png');
-            background-repeat: repeat; scroll-behavior: smooth;
+            font-family: 'Playfair Display', serif; scroll-behavior: smooth;
         }
         nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem 10%; background: rgba(0, 0, 0, 0.9);
-            border-bottom: 2px solid var(--river-blue); position: sticky; top: 0; z-index: 1000;
+            display: flex; justify-content: space-between; padding: 1rem 10%;
+            background: rgba(0,0,0,0.9); border-bottom: 2px solid #1b4f72;
+            position: sticky; top: 0; z-index: 99;
         }
-        .logo { font-size: 1.2rem; font-weight: bold; color: var(--brass); text-transform: uppercase; letter-spacing: 2px; }
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--parchment); font-size: 0.8rem; text-transform: uppercase; }
+        .logo { font-weight: bold; color: var(--brass); text-transform: uppercase; }
         .hero {
-            height: 60vh; display: flex; flex-direction: column; justify-content: center; 
+            height: 60vh; display: flex; flex-direction: column; justify-content: center;
             align-items: center; text-align: center;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
             url('https://images.unsplash.com/photo-1593116819444-24d101d78211?q=80&w=2000');
-            background-size: cover; background-position: center; border-bottom: 4px solid var(--brass);
+            background-size: cover; border-bottom: 4px solid var(--brass);
         }
         .section { padding: 4rem 10%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
         .card { 
-            background: rgba(0, 0, 0, 0.7); padding: 30px; border: 1px solid #3c2a21;
-            border-top: 4px solid var(--brass); border-radius: 4px; 
+            background: rgba(0, 0, 0, 0.75); padding: 2rem; border: 1px solid #3c2a21;
+            border-top: 4px solid var(--brass); border-radius: 4px;
         }
-        .card h4 { color: var(--brass); margin-top: 0; text-transform: uppercase; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-        .gallery-img { width: 100%; height: 250px; object-fit: cover; border: 1px solid var(--brass); }
-        .title { text-align: center; font-size: 2.2rem; color: var(--brass); margin-bottom: 30px; text-transform: uppercase; }
-        footer { padding: 40px; text-align: center; font-size: 0.7rem; color: #555; }
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .img-grid img { width: 100%; height: 250px; object-fit: cover; border: 1px solid var(--brass); }
+        footer { padding: 2rem; text-align: center; font-size: 0.8rem; opacity: 0.6; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
         <div class="logo">Alex's Custom Gear</div>
-        <ul class="nav-links">
-            <li><a href="#gear">Equipment</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
+        <div style="display:flex; gap:20px;">
+            <a href="#gear" style="color:white; text-decoration:none; font-size:0.8rem;">GEAR</a>
+            <a href="#gallery" style="color:white; text-decoration:none; font-size:0.8rem;">GALLERY</a>
+        </div>
     </nav>
 
     <header class="hero">
-        <h1 style="font-size: 3rem; color: var(--brass); margin: 0;">Handcrafted For The Hunt</h1>
-        <p style="font-style: italic; opacity: 0.8;">Gear that honors the tradition of the water.</p>
+        <h1 style="font-size: 3rem; margin: 0; color: var(--brass);">Handcrafted For The Hunt</h1>
+        <p style="font-style: italic;">Honoring the tradition of the water.</p>
     </header>
 
     <section id="gear" class="section">
-        <h2 class="title">Bespoke Equipment</h2>
-        <div class="grid">
+        <div class="card-grid">
             <div class="card">
-                <h4>Custom Rods</h4>
-                <p>• Hand-turned Walnut Grips<br>• Custom Thread Wrappings<br>• Precision Balanced</p>
+                <h4 style="color:var(--brass); margin-top:0;">CUSTOM RODS</h4>
+                <p>• Walnut Grips<br>• Thread Wraps<br>• Precision Balance</p>
             </div>
             <div class="card">
-                <h4>Signature Tackle</h4>
-                <p>• Brass-finished Hardware<br>• Hand-tied Flies & Lures<br>• Heavy-duty Storage</p>
+                <h4 style="color:var(--brass); margin-top:0;">SIGNATURE REELS</h4>
+                <p>• Brass Hardware<br>• Oak Sideplates<br>• Lifetime Build</p>
             </div>
             <div class="card">
-                <h4>Rugged Apparel</h4>
-                <p>• Weathered Leather Accents<br>• Heavyweight Canvas<br>• Reinforced Stitching</p>
+                <h4 style="color:var(--brass); margin-top:0;">ARTISAN LURES</h4>
+                <p>• Hand-Painted<br>• Native Patterns<br>• Perfect Weight</p>
             </div>
         </div>
     </section>
 
     <section id="gallery" class="section" style="background: rgba(0,0,0,0.3);">
-        <h2 class="title">The Field</h2>
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=800" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1499652848871-1527a310b13a?q=80&w=800" class="gallery-img">
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800">
+            <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=800">
+            <img src="https://images.unsplash.com/photo-1499652848871-1527a310b13a?q=80&w=800">
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | ESTABLISHED ON THE WATER</p>
+        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | THE RIVER FLOWS ON</p>
     </footer>
 </body>
 </html>
