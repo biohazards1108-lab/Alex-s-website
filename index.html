@@ -3,44 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex's Custom Fishing Gear</title>
+    <title>Alex's Custom Fishing Gear | Premium Outdoors</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --accent: #27ae60;
-            --light: #f4f7f6;
+            /* NEW OUTDOORSY COLOR PALETTE */
+            --wood-dark: #3e2723;   /* Rich dark wood */
+            --wood-medium: #5d4037; /* Medium walnut */
+            --forest-green: #2e7d32; /* Deep pine/moss green */
+            --light-cream: #fbf9f6; /* Textured, off-white background */
             --white: #ffffff;
-            --dark: #1a252f;
+            --tackle-box-grey: #37474f; /* Steel grey for accents */
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Georgia', serif; /* A more rustic, classic serif font */
             margin: 0;
             line-height: 1.6;
-            color: var(--primary);
-            background-color: var(--light);
+            color: var(--wood-dark);
+            background-color: var(--light-cream);
         }
 
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 10%;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--wood-dark); /* Dark wood background */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo { font-size: 1.2rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
-        .nav-links { list-style: none; display: flex; gap: 2rem; padding: 0; }
-        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 500; }
+        .logo { 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            color: var(--white); /* White logo text on dark wood */
+        }
 
+        .nav-links { 
+            list-style: none; 
+            display: flex; 
+            gap: 2rem; 
+            padding: 0; 
+        }
+
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--white); /* White links on dark wood */
+            font-weight: 500; 
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--forest-green); /* Green hover effect */
+        }
+
+        /* Hero Section with NEW Main Image (Fish & Gear) */
         .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&q=80&w=2000');
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        /* New main picture: Fishing rods and gear by a river */
+                        url('https://images.unsplash.com/photo-1593116819444-24d101d78211?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -50,11 +77,28 @@
             text-align: center;
             color: var(--white);
             padding: 0 20px;
+            border-bottom: 8px solid var(--wood-medium); /* Wood border */
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero h1 { 
+            font-size: 3.8rem; 
+            margin-bottom: 10px; 
+            font-family: 'Playfair Display', serif; /* Stylish, premium heading */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
-        .checklist-container { padding: 5rem 10%; background: var(--white); }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Gear Checklist Section */
+        .checklist-container { 
+            padding: 5rem 10%; 
+            background: var(--white); 
+        }
+
         .checklist-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -63,13 +107,25 @@
         }
 
         .checklist-item {
-            background: var(--light);
+            background: var(--light-cream);
             padding: 25px;
-            border-left: 5px solid var(--accent);
+            border-left: 5px solid var(--wood-medium); /* Wood border accent */
             border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .gallery-section { background: var(--dark); padding: 5rem 10%; }
+        .checklist-item h4 { 
+            margin-top: 0; 
+            color: var(--wood-dark); 
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Gallery Section */
+        .gallery-section { 
+            background: var(--wood-dark); /* Dark wood background */
+            padding: 5rem 10%; 
+        }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -80,45 +136,64 @@
             width: 100%;
             height: 300px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 4px; /* More angular, rustic corners */
             transition: 0.3s;
+            border: 4px solid var(--wood-medium); /* Framed in wood */
         }
 
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
-        .white-text { color: white; }
+        .gallery-img:hover {
+            transform: scale(1.03);
+            border-color: var(--forest-green);
+        }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } }
+        .section-title { 
+            text-align: center; 
+            font-size: 2.8rem; 
+            margin-bottom: 40px; 
+            font-family: 'Playfair Display', serif;
+            color: var(--wood-dark);
+        }
+
+        .white-text { 
+            color: var(--white); 
+        }
+
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.5rem; } 
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
         <div class="logo">Alex's Custom Fishing Gear</div>
         <ul class="nav-links">
-            <li><a href="#gear">Gear</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#gear">Custom Gear</a></li>
+            <li><a href="#gallery">The Field</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Alex's Custom Fishing Gear</h1>
-        <p>Premium quality for the dedicated angler.</p>
+        <h1>Crafted For The Catch</h1>
+        <p>Premium, handcrafted fishing equipment for the dedicated angler. Built to perform, designed to last.</p>
     </header>
 
     <section id="gear" class="checklist-container">
-        <h2 class="section-title">Essential Gear Checklist</h2>
+        <h2 class="section-title">Essential Custom Equipment</h2>
         <div class="checklist-grid">
             <div class="checklist-item">
-                <h4>Core Tackle</h4>
-                <p>• Custom Fluorocarbon lines<br>• Hand-selected Hooks<br>• Professional Tackle Management</p>
+                <h4>Custom Rods</h4>
+                <p>• Hand-turned Wood Grips<br>• Precision Graphite Blanks<br>• Perfect Balance & Action</p>
             </div>
             <div class="checklist-item">
-                <h4>Safety Gear</h4>
-                <p>• Polarized UV Protection<br>• Emergency First Aid<br>• Precision Navigation Tools</p>
+                <h4>Performance Tackle</h4>
+                <p>• Premium Fluorocarbon leaders<br>• Specialist Hook Sets<br>• Hand-painted Lures</p>
             </div>
             <div class="checklist-item">
                 <h4>Apparel</h4>
-                <p>• Performance Base Layers<br>• Waterproof Waders<br>• All-Weather Headwear</p>
+                <p>• Waxed Cotton Utility Vests<br>• Breathable Performance Shirts<br>• All-Weather Hats</p>
             </div>
         </div>
     </section>
@@ -126,9 +201,9 @@
     <section id="gallery" class="gallery-section">
         <h2 class="section-title white-text">From the Field</h2>
         <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Fishing 1">
-            <img src="https://images.unsplash.com/photo-1499652848871-1527a310b13a?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Fishing 2">
-            <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Fishing 3">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Angler in river">
+            <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Close up of fishing reel">
+            <img src="https://images.unsplash.com/photo-1499652848871-1527a310b13a?auto=format&fit=crop&q=80&w=800" class="gallery-img" alt="Person holding a caught fish">
         </div>
     </section>
 
