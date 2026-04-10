@@ -19,10 +19,9 @@
             background-color: var(--deep-black);
             color: var(--parchment);
             scroll-behavior: smooth;
-            overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* Fixed Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -43,7 +42,7 @@
 
         /* Luxury Hero */
         .hero {
-            height: 85vh;
+            height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), 
                         url('https://images.unsplash.com/photo-1541742425281-c1d3bc8abc46?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
@@ -56,37 +55,83 @@
             border-bottom: 5px solid var(--burned-orange);
         }
 
-        .hero h1 { font-size: 5rem; color: var(--brass); margin: 0; line-height: 1; letter-spacing: -2px; }
-        .hero p { font-size: 1.1rem; max-width: 600px; margin-top: 25px; font-style: italic; color: #888; letter-spacing: 1px; }
+        .hero h1 { font-size: 4rem; color: var(--brass); margin: 0; line-height: 1.1; }
+        .hero p { font-size: 1.1rem; max-width: 600px; margin-top: 25px; color: #888; }
 
-        /* Sections */
-        .section { padding: 120px 10%; }
-        .section-title { text-align: center; font-size: 3rem; margin-bottom: 60px; color: var(--brass); text-transform: uppercase; letter-spacing: 4px; }
-
-        /* Craftsmanship Section */
-        .craft-flex { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; margin-bottom: 100px; }
-        .craft-text { flex: 1; min-width: 300px; }
-        .craft-text h2 { color: var(--burned-orange); font-size: 2.5rem; }
-        .craft-img { flex: 1; min-width: 300px; height: 400px; background: url('https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=1000') center/cover; border: 1px solid var(--brass); border-radius: 4px; }
+        /* General Section Styling */
+        .section { padding: 100px 10%; border-bottom: 1px solid #1a1a1a; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: var(--brass); text-transform: uppercase; letter-spacing: 4px; }
 
         /* Gear Cards */
-        .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .gear-card { background: #111; border: 1px solid #222; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; }
-        .gear-card:hover { transform: scale(1.02); border-color: var(--burned-orange); }
-        .gear-img { width: 100%; height: 300px; object-fit: cover; opacity: 0.8; transition: 0.5s; }
-        .gear-card:hover .gear-img { opacity: 1; }
-        .gear-info { padding: 30px; border-top: 1px solid #222; }
-        .gear-info h3 { color: var(--brass); margin-top: 0; text-transform: uppercase; }
+        .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .gear-card { background: #111; border: 1px solid #222; transition: 0.4s; overflow: hidden; }
+        .gear-card:hover { transform: translateY(-10px); border-color: var(--burned-orange); }
+        .gear-img { width: 100%; height: 280px; object-fit: cover; opacity: 0.8; }
+        .gear-info { padding: 25px; }
+        .gear-info h3 { color: var(--brass); margin: 0; text-transform: uppercase; }
 
-        /* Modern Order Form */
-        .order-container { max-width: 900px; margin: 0 auto; background: #0f0f0f; padding: 60px; border: 1px solid var(--warm-wood); position: relative; }
-        .order-container::before { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; height: 4px; background: var(--burned-orange); }
-        input, textarea, select { width: 100%; padding: 18px; margin: 10px 0 30px 0; background: #050505; border: 1px solid #333; color: var(--parchment); font-family: 'Playfair Display', serif; }
-        .submit-btn { background: var(--burned-orange); color: white; border: none; padding: 20px; width: 100%; font-weight: 900; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; }
+        /* Premium Form */
+        .order-container { max-width: 800px; margin: 0 auto; background: #0f0f0f; padding: 50px; border: 1px solid var(--warm-wood); }
+        input, textarea, select { width: 100%; padding: 15px; margin: 10px 0 25px 0; background: #000; border: 1px solid #333; color: var(--parchment); font-family: serif; box-sizing: border-box; }
+        .submit-btn { background: var(--burned-orange); color: white; border: none; padding: 18px; width: 100%; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
 
-        /* Support/Pay */
-        .support-card { text-align: center; background: linear-gradient(145deg, #111, #050505); padding: 80px 40px; border: 1px solid var(--burned-orange); }
-        .pay-btn { display: inline-block; margin: 15px; padding: 15px 45px; border: 1px solid var(--brass); color: var(--brass); text-decoration: none; transition: 0.3s; }
-        .pay-btn:hover { background: var(--brass); color: black; }
+        /* Support & Reviews */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .box { background: rgba(255,255,255,0.03); padding: 30px; border: 1px solid #222; }
+        .pay-btn { display: inline-block; margin-top: 15px; padding: 10px 25px; border: 1px solid var(--brass); color: var(--brass); text-decoration: none; }
 
-        footer { padding: 60px; text-align: center; font-size: 0.7
+        footer { padding: 50px; text-align: center; font-size: 0.7rem; color: #444; letter-spacing: 2px; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .nav-links { display: none; } }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Alex's Custom Gear</div>
+        <ul class="nav-links">
+            <li><a href="#gear">The Gear</a></li>
+            <li><a href="#order">Commission</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Handcrafted Legacy.</h1>
+        <p>Premium fishing tackle forged from reclaimed hardwoods and precision brass.</p>
+    </header>
+
+    <section id="gear" class="section">
+        <h2 class="section-title">The Collection</h2>
+        <div class="gear-grid">
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1615822606443-6c7081736186?q=80&w=800" class="gear-img">
+                <div class="gear-info"><h3>Titan Reels</h3><p>Brass internals with walnut side-plates.</p></div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800" class="gear-img">
+                <div class="gear-info"><h3>Oak Rods</h3><p>Hand-turned handles with graphite cores.</p></div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=800" class="gear-img">
+                <div class="gear-info"><h3>Artisan Lures</h3><p>Individually carved for perfect water action.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="section">
+        <h2 class="section-title">Custom Commission</h2>
+        <div class="order-container">
+            <form action="#">
+                <label>Select Your Build</label>
+                <select>
+                    <option>Custom Reel</option>
+                    <option>Hand-Turned Rod</option>
+                    <option>Full Expedition Set</option>
+                </select>
+                <label>Your Name</label>
+                <input type="text" placeholder="John Doe">
+                <label>Specs & Wood Preference</label>
+                <textarea rows="5" placeholder="Tell Alex about your custom needs
