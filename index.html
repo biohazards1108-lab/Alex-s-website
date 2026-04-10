@@ -13,4 +13,103 @@
             background-color: var(--deep-river);
             /* NEW BACKGROUND: DARK RIVER STREAM */
             background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
-                              url('
+                              url('https://images.unsplash.com/photo-1516710104703-aa47b6275051?q=80&w=2000&auto=format&fit=crop');
+            background-attachment: fixed; background-size: cover; background-position: center;
+            scroll-behavior: smooth; overflow-x: hidden;
+        }
+        #cursor { width: 15px; height: 15px; border: 2px solid var(--brass); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; box-shadow: 0 0 15px var(--gold-glow); background: rgba(212, 175, 55, 0.1); }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 8%; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--brass); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--brass); text-transform: uppercase; font-weight: 900; letter-spacing: 4px; }
+        .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; }
+        .nav-links a { text-decoration: none; color: #bbb; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6rem); color: var(--brass); margin: 0; text-transform: uppercase; font-style: italic; letter-spacing: -2px; }
+        .status-container { margin-top: 30px; text-align: center; }
+        .status-bar { width: 250px; height: 6px; background: rgba(255,255,255,0.1); margin: 10px auto; position: relative; border-radius: 10px; }
+        .status-fill { width: 40%; height: 100%; background: var(--brass); border-radius: 10px; box-shadow: 0 0 10px var(--brass); }
+        .section { padding: 120px 10%; }
+        .title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; color: var(--brass); margin-bottom: 60px; text-transform: uppercase; letter-spacing: 8px; }
+        .workshop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gear-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; transition: 0.5s; position: relative; }
+        .gear-card:hover { border-color: var(--brass); transform: scale(1.02); }
+        .gear-card img { width: 100%; height: 400px; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .gear-card:hover img { opacity: 1; }
+        .artisan-card { background: rgba(5, 10, 15, 0.9); padding: 60px; border: 1px solid rgba(212, 175, 55, 0.2); max-width: 900px; margin: 0 auto; box-shadow: 0 40px 100px rgba(0,0,0,0.8); }
+        input, textarea, select { width: 100%; padding: 20px; margin-bottom: 30px; background: #000; border: 1px solid #222; color: white; border-radius: 0; }
+        .btn { background: var(--brass); color: #000; border: none; padding: 20px; font-weight: 900; text-transform: uppercase; width: 100%; letter-spacing: 4px; transition: 0.3s; }
+        .btn:hover { background: #fff; }
+        .fab { position: fixed; bottom: 30px; right: 30px; background: var(--brass); color: black; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 100; font-size: 0.7rem; text-align: center; line-height: 1; }
+        footer { padding: 100px; text-align: center; font-size: 0.6rem; background: #000; letter-spacing: 4px; color: #444; border-top: 1px solid #111; }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <a href="#order" class="fab">ORDER<br>NOW</a>
+    <nav>
+        <div class="logo">Alex's Custom Gear</div>
+        <ul class="nav-links">
+            <li><a href="#workshop">The Workshop</a></li>
+            <li><a href="#order">Commissions</a></li>
+            <li><a href="#reviews">Testimonials</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 style="animation: slideIn 1.5s ease;">Legacy on the Line</h1>
+        <div class="status-container" style="animation: slideIn 2s ease;">
+            <div class="status-bar"><div class="status-fill"></div></div>
+            <p style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--brass);">2 Custom Build Slots Open for April</p>
+        </div>
+    </header>
+    <section id="workshop" class="section reveal">
+        <h2 class="title">The Workshop</h2>
+        <div class="workshop-grid">
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=800&cache_bust=1">
+                <div style="padding: 20px;">
+                    <h3>Titan Series</h3>
+                    <p style="font-size: 0.8rem; opacity: 0.6;">Precision engineered reels built for heavy river duty.</p>
+                </div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=800&cache_bust=2">
+                <div style="padding: 20px;">
+                    <h3>Artisan Lures</h3>
+                    <p style="font-size: 0.8rem; opacity: 0.6;">Individually carved patterns designed to mimic native prey.</p>
+                </div>
+            </div>
+            <div class="gear-card">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&cache_bust=3">
+                <div style="padding: 20px;">
+                    <h3>The Rod Room</h3>
+                    <p style="font-size: 0.8rem; opacity: 0.6;">Where native walnut meets carbon for the perfect cast.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="order" class="section reveal">
+        <h2 class="title">Initiate Build</h2>
+        <div class="artisan-card">
+            <form>
+                <select><option>Custom Hand-Turned Rod</option><option>Bespoke Brass Reel</option><option>Full Expedition Pack</option></select>
+                <input type="text" placeholder="Full Name">
+                <textarea rows="4" placeholder="Detail your project..."></textarea>
+                <button type="submit" class="btn">Start Commission</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 ALEX'S CUSTOM FISHING GEAR | FORGED IN TRADITION</p>
+    </footer>
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        const links = document.querySelectorAll('a, button, select, input');
+        links.forEach(link => { link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(3)'); link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)'); });
+    </script>
+</body>
+</html>
